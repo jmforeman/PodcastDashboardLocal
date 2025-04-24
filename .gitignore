@@ -1,0 +1,19 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Virtual environment (if you use one locally)
+venv/
+*.venv/
+env/
+
+# Local Database file (Actions will manage the cloud version)
+*.db
+*.db-journal # SQLite temporary file
+
+# Secrets file (if you were storing them locally - don't!)
+.env
+secrets.txt
+
+#google updater api key
+podcast-dashboard-pipeline-3ee4a06f8550.json

@@ -1,0 +1,2207 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20251.25.0313.2002                               -->
+<workbook original-version='18.1' source-build='2025.1.0 (20251.25.0313.2002)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Top100List+ (Podcast_Query_Output)' inline='true' name='federated.0jlj04j0h6rjw714d3u5p18ogyyf' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Podcast_Query_Output' name='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7'>
+            <connection class='cloudfile:googledrive-excel-direct' cleaning='no' cloudFileExtension='xlsx' cloudFileId='1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek' cloudFileMetadata_-_folder='1reegOgJ_mRKpM_0gg2R_cd1e3WjMHNaI' cloudFileName='Podcast_Query_Output.xlsx' cloudFileProvider='googledrive' cloudFileRequestURL='https://www.googleapis.com/drive/v3/files/1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek/export?mimeType=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' compat='no' dataRefreshTime='' filename='Podcast_Query_Output.xlsx' interpretationMode='0' server='' server-oauth='' username='jmforeman02@gmail.com' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='Top100List' table='[Top100List$]' type='table'>
+            <columns gridOrigin='A1:Q562:no:A1:Q562:0' header='yes' outcome='2'>
+              <column datatype='string' name='platform' ordinal='0' />
+              <column datatype='integer' name='rank' ordinal='1' />
+              <column datatype='string' name='list_title' ordinal='2' />
+              <column datatype='string' name='platform_podcast_id' ordinal='3' />
+              <column datatype='integer' name='podcast_index_id' ordinal='4' />
+              <column datatype='string' name='podcast_index_title' ordinal='5' />
+              <column datatype='string' name='description' ordinal='6' />
+              <column datatype='string' name='feed_url' ordinal='7' />
+              <column datatype='string' name='image_url' ordinal='8' />
+              <column datatype='integer' name='episode_count' ordinal='9' />
+              <column datatype='integer' name='avg_duration_last_10' ordinal='10' />
+              <column datatype='string' name='latest_episode_title' ordinal='11' />
+              <column datatype='integer' name='last_update_time' ordinal='12' />
+              <column datatype='string' name='podcast_guid' ordinal='13' />
+              <column datatype='string' name='original_url' ordinal='14' />
+              <column datatype='integer' name='category_id' ordinal='15' />
+              <column datatype='string' name='category_name' ordinal='16' />
+            </columns>
+          </relation>
+          <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='NewEntries' table='[NewEntries$]' type='table'>
+            <columns gridOrigin='A1:C16:no:A1:C16:0' header='yes' outcome='6'>
+              <column datatype='string' name='platform' ordinal='0' />
+              <column datatype='string' name='title' ordinal='1' />
+              <column datatype='integer' name='current_rank' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='PlatformOverlap' table='[PlatformOverlap$]' type='table'>
+            <columns gridOrigin='A1:A41:no:A1:A41:0' header='yes' outcome='6'>
+              <column datatype='string' name='overlapping_title' ordinal='0' />
+            </columns>
+          </relation>
+          <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='RankChanges' table='[RankChanges$]' type='table'>
+            <columns gridOrigin='A1:F2401:no:A1:F2401:0' header='yes' outcome='2'>
+              <column datatype='date' name='date' ordinal='0' />
+              <column datatype='string' name='platform' ordinal='1' />
+              <column datatype='string' name='list_title' ordinal='2' />
+              <column datatype='integer' name='current_rank' ordinal='3' />
+              <column datatype='integer' name='previous_rank' ordinal='4' />
+              <column datatype='integer' name='rank_change' ordinal='5' />
+            </columns>
+          </relation>
+          <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='TimeOnList' table='[TimeOnList$]' type='table'>
+            <columns gridOrigin='A1:E316:no:A1:E316:0' header='yes' outcome='6'>
+              <column datatype='string' name='platform' ordinal='0' />
+              <column datatype='string' name='list_title' ordinal='1' />
+              <column datatype='integer' name='days_on_list' ordinal='2' />
+              <column datatype='date' name='first_seen_date' ordinal='3' />
+              <column datatype='date' name='last_seen_date' ordinal='4' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[avg_duration_last_10]' value='[Top100List].[avg_duration_last_10]' />
+          <map key='[category_id]' value='[Top100List].[category_id]' />
+          <map key='[category_name]' value='[Top100List].[category_name]' />
+          <map key='[current_rank (RankChanges)]' value='[RankChanges].[current_rank]' />
+          <map key='[current_rank]' value='[NewEntries].[current_rank]' />
+          <map key='[date]' value='[RankChanges].[date]' />
+          <map key='[days_on_list]' value='[TimeOnList].[days_on_list]' />
+          <map key='[description]' value='[Top100List].[description]' />
+          <map key='[episode_count]' value='[Top100List].[episode_count]' />
+          <map key='[feed_url]' value='[Top100List].[feed_url]' />
+          <map key='[first_seen_date]' value='[TimeOnList].[first_seen_date]' />
+          <map key='[image_url]' value='[Top100List].[image_url]' />
+          <map key='[last_seen_date]' value='[TimeOnList].[last_seen_date]' />
+          <map key='[last_update_time]' value='[Top100List].[last_update_time]' />
+          <map key='[latest_episode_title]' value='[Top100List].[latest_episode_title]' />
+          <map key='[list_title (RankChanges)]' value='[RankChanges].[list_title]' />
+          <map key='[list_title (TimeOnList)]' value='[TimeOnList].[list_title]' />
+          <map key='[list_title]' value='[Top100List].[list_title]' />
+          <map key='[original_url]' value='[Top100List].[original_url]' />
+          <map key='[overlapping_title]' value='[PlatformOverlap].[overlapping_title]' />
+          <map key='[platform (NewEntries)]' value='[NewEntries].[platform]' />
+          <map key='[platform (RankChanges)]' value='[RankChanges].[platform]' />
+          <map key='[platform (TimeOnList)]' value='[TimeOnList].[platform]' />
+          <map key='[platform]' value='[Top100List].[platform]' />
+          <map key='[platform_podcast_id]' value='[Top100List].[platform_podcast_id]' />
+          <map key='[podcast_guid]' value='[Top100List].[podcast_guid]' />
+          <map key='[podcast_index_id]' value='[Top100List].[podcast_index_id]' />
+          <map key='[podcast_index_title]' value='[Top100List].[podcast_index_title]' />
+          <map key='[previous_rank]' value='[RankChanges].[previous_rank]' />
+          <map key='[rank]' value='[Top100List].[rank]' />
+          <map key='[rank_change]' value='[RankChanges].[rank_change]' />
+          <map key='[title]' value='[NewEntries].[title]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>2</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:Q562:no:A1:Q562:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[NewEntries]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>2</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C16:no:A1:C16:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[PlatformOverlap]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>2</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:A41:no:A1:A41:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[RankChanges]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>2</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:F2401:no:A1:F2401:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[TimeOnList]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>2</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:E316:no:A1:E316:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>platform</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[platform]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>platform</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rank]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>rank</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>list_title</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[list_title]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>list_title</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>platform_podcast_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[platform_podcast_id]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>platform_podcast_id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>podcast_index_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[podcast_index_id]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>podcast_index_id</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>podcast_index_title</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[podcast_index_title]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>podcast_index_title</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>description</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[description]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>description</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>feed_url</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[feed_url]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>feed_url</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>image_url</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[image_url]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>image_url</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>episode_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[episode_count]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>episode_count</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_duration_last_10</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[avg_duration_last_10]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>avg_duration_last_10</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latest_episode_title</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[latest_episode_title]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>latest_episode_title</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_update_time</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[last_update_time]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>last_update_time</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>podcast_guid</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[podcast_guid]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>podcast_guid</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>original_url</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[original_url]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>original_url</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[category_id]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>category_id</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category_name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[category_name]</local-name>
+            <parent-name>[Top100List]</parent-name>
+            <remote-alias>category_name</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>platform</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[platform (NewEntries)]</local-name>
+            <parent-name>[NewEntries]</parent-name>
+            <remote-alias>platform</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[title]</local-name>
+            <parent-name>[NewEntries]</parent-name>
+            <remote-alias>title</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>current_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[current_rank]</local-name>
+            <parent-name>[NewEntries]</parent-name>
+            <remote-alias>current_rank</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>overlapping_title</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[overlapping_title]</local-name>
+            <parent-name>[PlatformOverlap]</parent-name>
+            <remote-alias>overlapping_title</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[RankChanges]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>platform</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[platform (RankChanges)]</local-name>
+            <parent-name>[RankChanges]</parent-name>
+            <remote-alias>platform</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>list_title</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[list_title (RankChanges)]</local-name>
+            <parent-name>[RankChanges]</parent-name>
+            <remote-alias>list_title</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>current_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[current_rank (RankChanges)]</local-name>
+            <parent-name>[RankChanges]</parent-name>
+            <remote-alias>current_rank</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>previous_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[previous_rank]</local-name>
+            <parent-name>[RankChanges]</parent-name>
+            <remote-alias>previous_rank</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rank_change</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rank_change]</local-name>
+            <parent-name>[RankChanges]</parent-name>
+            <remote-alias>rank_change</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>platform</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[platform (TimeOnList)]</local-name>
+            <parent-name>[TimeOnList]</parent-name>
+            <remote-alias>platform</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>list_title</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[list_title (TimeOnList)]</local-name>
+            <parent-name>[TimeOnList]</parent-name>
+            <remote-alias>list_title</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>days_on_list</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[days_on_list]</local-name>
+            <parent-name>[TimeOnList]</parent-name>
+            <remote-alias>days_on_list</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>first_seen_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[first_seen_date]</local-name>
+            <parent-name>[TimeOnList]</parent-name>
+            <remote-alias>first_seen_date</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_seen_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[last_seen_date]</local-name>
+            <parent-name>[TimeOnList]</parent-name>
+            <remote-alias>last_seen_date</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Avg Duration in Hours(Last 10 Ep)' datatype='real' name='[Calculation_1258193146959384577]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[avg_duration_last_10]/3600' />
+      </column>
+      <column caption='Platform (copy)' datatype='string' name='[Platform (copy)_1258193147368738829]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[platform]' />
+      </column>
+      <column caption='NewEntries' datatype='table' name='[__tableau_internal_object_id__].[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]' role='measure' type='quantitative' />
+      <column caption='PlatformOverlap' datatype='table' name='[__tableau_internal_object_id__].[PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76]' role='measure' type='quantitative' />
+      <column caption='RankChanges' datatype='table' name='[__tableau_internal_object_id__].[RankChanges_87963D839E024F28960A78B11AC40A99]' role='measure' type='quantitative' />
+      <column caption='TimeOnList' datatype='table' name='[__tableau_internal_object_id__].[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]' role='measure' type='quantitative' />
+      <column caption='Top100List' datatype='table' name='[__tableau_internal_object_id__].[Top100List_CCD86935241B4990BC18AA98E085A29F]' role='measure' type='quantitative' />
+      <column caption='Avg Duration Last 10' datatype='integer' name='[avg_duration_last_10]' role='measure' type='quantitative' />
+      <column caption='Category Id' datatype='integer' name='[category_id]' role='dimension' type='ordinal' />
+      <column caption='Category Name' datatype='string' name='[category_name]' role='dimension' type='nominal' />
+      <column caption='current rank (RankChanges)' datatype='integer' name='[current_rank (RankChanges)]' role='measure' type='quantitative' />
+      <column caption='Current Rank' datatype='integer' name='[current_rank]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Days On List' datatype='integer' name='[days_on_list]' role='measure' type='quantitative' />
+      <column caption='Description' datatype='string' name='[description]' role='dimension' type='nominal' />
+      <column caption='Episode Count' datatype='integer' name='[episode_count]' role='measure' type='quantitative' />
+      <column caption='Feed Url' datatype='string' name='[feed_url]' role='dimension' type='nominal' />
+      <column caption='First Seen Date' datatype='date' name='[first_seen_date]' role='dimension' type='ordinal' />
+      <column caption='Image Url' datatype='string' name='[image_url]' role='dimension' type='nominal' />
+      <column caption='Last Seen Date' datatype='date' name='[last_seen_date]' role='dimension' type='ordinal' />
+      <column caption='Last Update Time' datatype='integer' name='[last_update_time]' role='measure' type='quantitative' />
+      <column caption='Latest Episode Title' datatype='string' name='[latest_episode_title]' role='dimension' type='nominal' />
+      <column caption='list title (RankChanges)' datatype='string' name='[list_title (RankChanges)]' role='dimension' type='nominal' />
+      <column caption='list title (TimeOnList)' datatype='string' name='[list_title (TimeOnList)]' role='dimension' type='nominal' />
+      <column caption='List Title' datatype='string' name='[list_title]' role='dimension' type='nominal' />
+      <column caption='Original Url' datatype='string' name='[original_url]' role='dimension' type='nominal' />
+      <column caption='Overlapping Title' datatype='string' name='[overlapping_title]' role='dimension' type='nominal' />
+      <column caption='Platform' datatype='string' name='[platform]' role='dimension' type='nominal' />
+      <column caption='Platform Podcast Id' datatype='string' name='[platform_podcast_id]' role='dimension' type='nominal' />
+      <column caption='Podcast Guid' datatype='string' name='[podcast_guid]' role='dimension' type='nominal' />
+      <column caption='Podcast Index Id' datatype='integer' name='[podcast_index_id]' role='dimension' type='ordinal' />
+      <column caption='Podcast Index Title' datatype='string' name='[podcast_index_title]' role='dimension' type='nominal' />
+      <column caption='Previous Rank' datatype='integer' name='[previous_rank]' role='measure' type='quantitative' />
+      <column caption='Rank' datatype='integer' name='[rank]' role='measure' type='quantitative' />
+      <column caption='Rank Change' datatype='integer' name='[rank_change]' role='measure' type='quantitative' />
+      <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal' />
+      <column-instance column='[avg_duration_last_10]' derivation='Attribute' name='[attr:avg_duration_last_10:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[category_name]' derivation='Attribute' name='[attr:category_name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[rank]' derivation='Attribute' name='[attr:rank:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[rank]' derivation='Avg' name='[avg:rank:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[rank]' derivation='Median' name='[med:rank:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1258193146959384577]' derivation='None' name='[none:Calculation_1258193146959384577:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[avg_duration_last_10]' derivation='None' name='[none:avg_duration_last_10:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[category_name]' derivation='None' name='[none:category_name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[platform]' derivation='None' name='[none:platform:nk]' pivot='key' type='nominal' />
+      <column-instance column='[rank]' derivation='None' name='[none:rank:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[rank]' derivation='Sum' name='[sum:rank:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (Avg Duration in Hours(Last 10 Ep),Podcast Index Title)' hidden='true' name='[Action (Avg Duration in Hours(Last 10 Ep),Podcast Index Title)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Calculation_1258193146959384577:ok]' />
+          <groupfilter function='level-members' level='[podcast_index_title]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Category Name)' hidden='true' name='[Action (Category Name)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[category_name]' />
+        </groupfilter>
+      </group>
+      <group caption='Podcast Platform' name='[Platform Set]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+          <groupfilter function='member' level='[none:platform:nk]' member='&quot;Apple&quot;' />
+          <groupfilter function='member' level='[none:platform:nk]' member='&quot;Spotify&quot;' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/jmfor/AppData/Local/Temp/TableauTemp/#TableauTemp_07j9pbe0ku52eo15rk4s506pl6w1.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/21/2025 08:22:23 PM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='Top100List_CCD86935241B4990BC18AA98E085A29F' table='[Extract].[Top100List_CCD86935241B4990BC18AA98E085A29F]' type='table' />
+            <relation name='NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3' table='[Extract].[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]' type='table' />
+            <relation name='PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76' table='[Extract].[PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76]' type='table' />
+            <relation name='RankChanges_87963D839E024F28960A78B11AC40A99' table='[Extract].[RankChanges_87963D839E024F28960A78B11AC40A99]' type='table' />
+            <relation name='TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E' table='[Extract].[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]' type='table' />
+          </relation>
+          <cols>
+            <map key='[avg_duration_last_10]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[avg_duration_last_10]' />
+            <map key='[category_id]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[category_id]' />
+            <map key='[category_name]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[category_name]' />
+            <map key='[current_rank (RankChanges)]' value='[RankChanges_87963D839E024F28960A78B11AC40A99].[current_rank]' />
+            <map key='[current_rank]' value='[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3].[current_rank]' />
+            <map key='[date]' value='[RankChanges_87963D839E024F28960A78B11AC40A99].[date]' />
+            <map key='[days_on_list]' value='[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E].[days_on_list]' />
+            <map key='[description]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[description]' />
+            <map key='[episode_count]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[episode_count]' />
+            <map key='[feed_url]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[feed_url]' />
+            <map key='[first_seen_date]' value='[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E].[first_seen_date]' />
+            <map key='[image_url]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[image_url]' />
+            <map key='[last_seen_date]' value='[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E].[last_seen_date]' />
+            <map key='[last_update_time]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[last_update_time]' />
+            <map key='[latest_episode_title]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[latest_episode_title]' />
+            <map key='[list_title (RankChanges)]' value='[RankChanges_87963D839E024F28960A78B11AC40A99].[list_title]' />
+            <map key='[list_title (TimeOnList)]' value='[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E].[list_title]' />
+            <map key='[list_title]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[list_title]' />
+            <map key='[original_url]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[original_url]' />
+            <map key='[overlapping_title]' value='[PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76].[overlapping_title]' />
+            <map key='[platform (NewEntries)]' value='[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3].[platform]' />
+            <map key='[platform (RankChanges)]' value='[RankChanges_87963D839E024F28960A78B11AC40A99].[platform]' />
+            <map key='[platform (TimeOnList)]' value='[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E].[platform]' />
+            <map key='[platform]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[platform]' />
+            <map key='[platform_podcast_id]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[platform_podcast_id]' />
+            <map key='[podcast_guid]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[podcast_guid]' />
+            <map key='[podcast_index_id]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[podcast_index_id]' />
+            <map key='[podcast_index_title]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[podcast_index_title]' />
+            <map key='[previous_rank]' value='[RankChanges_87963D839E024F28960A78B11AC40A99].[previous_rank]' />
+            <map key='[rank]' value='[Top100List_CCD86935241B4990BC18AA98E085A29F].[rank]' />
+            <map key='[rank_change]' value='[RankChanges_87963D839E024F28960A78B11AC40A99].[rank_change]' />
+            <map key='[title]' value='[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3].[title]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>platform</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[platform]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>platform</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[rank]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>rank</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Top100List</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>list_title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[list_title]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>list_title</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>160</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>platform_podcast_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[platform_podcast_id]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>platform_podcast_id</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>200</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>podcast_index_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[podcast_index_id]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>podcast_index_id</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Top100List</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>podcast_index_title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[podcast_index_title]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>podcast_index_title</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[description]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>description</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>feed_url</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[feed_url]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>feed_url</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>image_url</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[image_url]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>image_url</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>episode_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[episode_count]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>episode_count</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Top100List</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>135</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>avg_duration_last_10</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[avg_duration_last_10]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>avg_duration_last_10</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Top100List</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>151</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>latest_episode_title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[latest_episode_title]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>latest_episode_title</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>last_update_time</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[last_update_time]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>last_update_time</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Top100List</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>149</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>podcast_guid</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[podcast_guid]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>podcast_guid</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>original_url</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[original_url]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>original_url</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[category_id]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>category_id</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Top100List</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>54</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category_name]</local-name>
+              <parent-name>[Top100List_CCD86935241B4990BC18AA98E085A29F]</parent-name>
+              <remote-alias>category_name</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Top100List</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>54</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[Top100List_CCD86935241B4990BC18AA98E085A29F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>platform</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[platform (NewEntries)]</local-name>
+              <parent-name>[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]</parent-name>
+              <remote-alias>platform</remote-alias>
+              <ordinal>17</ordinal>
+              <family>NewEntries</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[title]</local-name>
+              <parent-name>[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]</parent-name>
+              <remote-alias>title</remote-alias>
+              <ordinal>18</ordinal>
+              <family>NewEntries</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>current_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[current_rank]</local-name>
+              <parent-name>[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]</parent-name>
+              <remote-alias>current_rank</remote-alias>
+              <ordinal>19</ordinal>
+              <family>NewEntries</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>overlapping_title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[overlapping_title]</local-name>
+              <parent-name>[PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76]</parent-name>
+              <remote-alias>overlapping_title</remote-alias>
+              <ordinal>20</ordinal>
+              <family>PlatformOverlap</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>40</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[RankChanges_87963D839E024F28960A78B11AC40A99]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>21</ordinal>
+              <family>RankChanges</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>platform</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[platform (RankChanges)]</local-name>
+              <parent-name>[RankChanges_87963D839E024F28960A78B11AC40A99]</parent-name>
+              <remote-alias>platform</remote-alias>
+              <ordinal>22</ordinal>
+              <family>RankChanges</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>list_title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[list_title (RankChanges)]</local-name>
+              <parent-name>[RankChanges_87963D839E024F28960A78B11AC40A99]</parent-name>
+              <remote-alias>list_title</remote-alias>
+              <ordinal>23</ordinal>
+              <family>RankChanges</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>233</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>current_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[current_rank (RankChanges)]</local-name>
+              <parent-name>[RankChanges_87963D839E024F28960A78B11AC40A99]</parent-name>
+              <remote-alias>current_rank</remote-alias>
+              <ordinal>24</ordinal>
+              <family>RankChanges</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>previous_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[previous_rank]</local-name>
+              <parent-name>[RankChanges_87963D839E024F28960A78B11AC40A99]</parent-name>
+              <remote-alias>previous_rank</remote-alias>
+              <ordinal>25</ordinal>
+              <family>RankChanges</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>101</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rank_change</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[rank_change]</local-name>
+              <parent-name>[RankChanges_87963D839E024F28960A78B11AC40A99]</parent-name>
+              <remote-alias>rank_change</remote-alias>
+              <ordinal>26</ordinal>
+              <family>RankChanges</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>92</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[RankChanges_87963D839E024F28960A78B11AC40A99]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>platform</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[platform (TimeOnList)]</local-name>
+              <parent-name>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</parent-name>
+              <remote-alias>platform</remote-alias>
+              <ordinal>27</ordinal>
+              <family>TimeOnList</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>list_title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[list_title (TimeOnList)]</local-name>
+              <parent-name>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</parent-name>
+              <remote-alias>list_title</remote-alias>
+              <ordinal>28</ordinal>
+              <family>TimeOnList</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>240</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>days_on_list</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[days_on_list]</local-name>
+              <parent-name>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</parent-name>
+              <remote-alias>days_on_list</remote-alias>
+              <ordinal>29</ordinal>
+              <family>TimeOnList</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>first_seen_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[first_seen_date]</local-name>
+              <parent-name>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</parent-name>
+              <remote-alias>first_seen_date</remote-alias>
+              <ordinal>30</ordinal>
+              <family>TimeOnList</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>last_seen_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[last_seen_date]</local-name>
+              <parent-name>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</parent-name>
+              <remote-alias>last_seen_date</remote-alias>
+              <ordinal>31</ordinal>
+              <family>TimeOnList</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[attr:avg_duration_last_10:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:avg_duration_last_10:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[avg:rank:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[sum:rank:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[attr:rank:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:rank:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:category_name:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Commentary&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Life&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;True Crime&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Alternative&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Health&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Science&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Business&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Interviews&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Sports&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Documentary&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Music&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Courses&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Management&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Tv&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Careers&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Investing&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Stand-up&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Football&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Relationships&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Arts&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;History&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Self Improvement&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Film&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Places&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Christianity&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Journals&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Technology&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Education&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;News&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Entertainment&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Personal&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Fitness&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Politics&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Government&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Religion&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Culture&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Marketing&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Comedy&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Leisure&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Travel&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Basketball&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;How To&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Society&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Entrepreneurship&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Philosophy&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Daily&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Mental&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Books&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Improv&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Spirituality&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[attr:category_name:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Commentary&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Life&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;True Crime&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Alternative&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Health&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Science&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Business&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Interviews&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Sports&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Documentary&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Music&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Courses&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Management&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Tv&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Careers&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Investing&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Stand-up&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Football&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Relationships&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Arts&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;History&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Self Improvement&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Film&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Places&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Christianity&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Journals&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Technology&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Education&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;News&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Entertainment&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Personal&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Fitness&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Politics&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Government&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Religion&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Culture&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Marketing&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Comedy&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Leisure&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Travel&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Basketball&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;How To&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Society&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Entrepreneurship&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Philosophy&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Daily&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Mental&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Books&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Improv&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Spirituality&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='date' />
+        <field-sort-custom-order field='platform (RankChanges)' />
+        <field-sort-custom-order field='list_title (RankChanges)' />
+        <field-sort-custom-order field='current_rank (RankChanges)' />
+        <field-sort-custom-order field='previous_rank' />
+        <field-sort-custom-order field='rank_change' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='NewEntries' id='NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3'>
+            <properties context=''>
+              <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='NewEntries' table='[NewEntries$]' type='table'>
+                <columns gridOrigin='A1:C16:no:A1:C16:0' header='yes' outcome='6'>
+                  <column datatype='string' name='platform' ordinal='0' />
+                  <column datatype='string' name='title' ordinal='1' />
+                  <column datatype='integer' name='current_rank' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3' table='[Extract].[NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3]' type='table' />
+            </properties>
+          </object>
+          <object caption='PlatformOverlap' id='PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76'>
+            <properties context=''>
+              <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='PlatformOverlap' table='[PlatformOverlap$]' type='table'>
+                <columns gridOrigin='A1:A41:no:A1:A41:0' header='yes' outcome='6'>
+                  <column datatype='string' name='overlapping_title' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76' table='[Extract].[PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76]' type='table' />
+            </properties>
+          </object>
+          <object caption='RankChanges' id='RankChanges_87963D839E024F28960A78B11AC40A99'>
+            <properties context=''>
+              <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='RankChanges' table='[RankChanges$]' type='table'>
+                <columns gridOrigin='A1:F2401:no:A1:F2401:0' header='yes' outcome='2'>
+                  <column datatype='date' name='date' ordinal='0' />
+                  <column datatype='string' name='platform' ordinal='1' />
+                  <column datatype='string' name='list_title' ordinal='2' />
+                  <column datatype='integer' name='current_rank' ordinal='3' />
+                  <column datatype='integer' name='previous_rank' ordinal='4' />
+                  <column datatype='integer' name='rank_change' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='RankChanges_87963D839E024F28960A78B11AC40A99' table='[Extract].[RankChanges_87963D839E024F28960A78B11AC40A99]' type='table' />
+            </properties>
+          </object>
+          <object caption='TimeOnList' id='TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E'>
+            <properties context=''>
+              <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='TimeOnList' table='[TimeOnList$]' type='table'>
+                <columns gridOrigin='A1:E316:no:A1:E316:0' header='yes' outcome='6'>
+                  <column datatype='string' name='platform' ordinal='0' />
+                  <column datatype='string' name='list_title' ordinal='1' />
+                  <column datatype='integer' name='days_on_list' ordinal='2' />
+                  <column datatype='date' name='first_seen_date' ordinal='3' />
+                  <column datatype='date' name='last_seen_date' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E' table='[Extract].[TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E]' type='table' />
+            </properties>
+          </object>
+          <object caption='Top100List' id='Top100List_CCD86935241B4990BC18AA98E085A29F'>
+            <properties context=''>
+              <relation connection='cloudfile:googledrive-excel-direct.0jvoeui1pkvrx91esogod1g5q6r7' name='Top100List' table='[Top100List$]' type='table'>
+                <columns gridOrigin='A1:Q562:no:A1:Q562:0' header='yes' outcome='2'>
+                  <column datatype='string' name='platform' ordinal='0' />
+                  <column datatype='integer' name='rank' ordinal='1' />
+                  <column datatype='string' name='list_title' ordinal='2' />
+                  <column datatype='string' name='platform_podcast_id' ordinal='3' />
+                  <column datatype='integer' name='podcast_index_id' ordinal='4' />
+                  <column datatype='string' name='podcast_index_title' ordinal='5' />
+                  <column datatype='string' name='description' ordinal='6' />
+                  <column datatype='string' name='feed_url' ordinal='7' />
+                  <column datatype='string' name='image_url' ordinal='8' />
+                  <column datatype='integer' name='episode_count' ordinal='9' />
+                  <column datatype='integer' name='avg_duration_last_10' ordinal='10' />
+                  <column datatype='string' name='latest_episode_title' ordinal='11' />
+                  <column datatype='integer' name='last_update_time' ordinal='12' />
+                  <column datatype='string' name='podcast_guid' ordinal='13' />
+                  <column datatype='string' name='original_url' ordinal='14' />
+                  <column datatype='integer' name='category_id' ordinal='15' />
+                  <column datatype='string' name='category_name' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Top100List_CCD86935241B4990BC18AA98E085A29F' table='[Extract].[Top100List_CCD86935241B4990BC18AA98E085A29F]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[platform]' />
+              <expression op='[platform (NewEntries)]' />
+            </expression>
+            <first-end-point object-id='Top100List_CCD86935241B4990BC18AA98E085A29F' />
+            <second-end-point object-id='NewEntries_73E0F4EF09354DBC84C1EF9A29EA1DA3' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[list_title]' />
+              <expression op='[overlapping_title]' />
+            </expression>
+            <first-end-point object-id='Top100List_CCD86935241B4990BC18AA98E085A29F' />
+            <second-end-point object-id='PlatformOverlap_2084032F4CDA4D3FA9E32B2BF6A37B76' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[list_title]' />
+              <expression op='[list_title (RankChanges)]' />
+            </expression>
+            <first-end-point object-id='Top100List_CCD86935241B4990BC18AA98E085A29F' />
+            <second-end-point object-id='RankChanges_87963D839E024F28960A78B11AC40A99' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[list_title]' />
+              <expression op='[list_title (TimeOnList)]' />
+            </expression>
+            <first-end-point object-id='Top100List_CCD86935241B4990BC18AA98E085A29F' />
+            <second-end-point object-id='TimeOnList_5739DEB49D064E7F9E0A7CF6AFE2BF7E' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name='federated.0jlj04j0h6rjw714d3u5p18ogyyf'>
+      <datasources>
+        <datasource caption='Top100List+ (Podcast_Query_Output)' name='federated.0jlj04j0h6rjw714d3u5p18ogyyf' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0jlj04j0h6rjw714d3u5p18ogyyf' />
+      <filter class='categorical' column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Platform Set]' context='true'>
+        <groupfilter function='member' level='[none:platform:nk]' member='&quot;Apple&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_A65DF05E43974F3BA138591BA86009CE]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Categories' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2_A6697B025F93467ABDDFBD054AD87686]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Top 100 Podcasts' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Categories'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Top100List+ (Podcast_Query_Output)' name='federated.0jlj04j0h6rjw714d3u5p18ogyyf' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jlj04j0h6rjw714d3u5p18ogyyf'>
+            <column caption='Avg Duration in Hours(Last 10 Ep)' datatype='real' name='[Calculation_1258193146959384577]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[avg_duration_last_10]/3600' />
+            </column>
+            <column caption='Avg Duration Last 10' datatype='integer' name='[avg_duration_last_10]' role='measure' type='quantitative' />
+            <column caption='Category Name' datatype='string' name='[category_name]' role='dimension' type='nominal' />
+            <column-instance column='[category_name]' derivation='Count' name='[cnt:category_name:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[rank]' derivation='Median' name='[med:rank:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1258193146959384577]' derivation='None' name='[none:Calculation_1258193146959384577:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[category_name]' derivation='None' name='[none:category_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[platform]' derivation='None' name='[none:platform:nk]' pivot='key' type='nominal' />
+            <column caption='Platform' datatype='string' name='[platform]' role='dimension' type='nominal' />
+            <column caption='Podcast Index Title' datatype='string' name='[podcast_index_title]' role='dimension' type='nominal' />
+            <column caption='Rank' datatype='integer' name='[rank]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Action (Avg Duration in Hours(Last 10 Ep),Podcast Index Title)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_A6697B025F93467ABDDFBD054AD87686]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:Calculation_1258193146959384577:ok]' member='1.28666666666667' />
+              <groupfilter function='member' level='[podcast_index_title]' member='&quot;REAL AF with Andy Frisella&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Platform Set]</column>
+            <column>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Action (Avg Duration in Hours(Last 10 Ep),Podcast Index Title)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+            <format attr='wrap' value='on' />
+            <format attr='text-orientation' value='0' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:category_name:nk]' value='0' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank:qk]' max='120.0' palette='blue_teal_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <color column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank:qk]' />
+              <size column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[cnt:category_name:ok]' />
+              <text column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:category_name:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{3EF5BFFA-C0C0-407D-A390-5D6018B13621}' />
+    </worksheet>
+    <worksheet name='Top 100 Podcasts'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Top100List+ (Podcast_Query_Output)' name='federated.0jlj04j0h6rjw714d3u5p18ogyyf' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jlj04j0h6rjw714d3u5p18ogyyf'>
+            <column caption='Avg Duration in Hours(Last 10 Ep)' datatype='real' name='[Calculation_1258193146959384577]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[avg_duration_last_10]/3600' />
+            </column>
+            <column-instance column='[description]' derivation='Attribute' name='[attr:description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[rank]' derivation='Avg' name='[avg:rank:ok]' pivot='key' type='ordinal' />
+            <column caption='Avg Duration Last 10' datatype='integer' name='[avg_duration_last_10]' role='measure' type='quantitative' />
+            <column caption='Category Name' datatype='string' name='[category_name]' role='dimension' type='nominal' />
+            <column caption='Description' datatype='string' name='[description]' role='dimension' type='nominal' />
+            <column-instance column='[rank_change]' derivation='Median' name='[med:rank_change:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1258193146959384577]' derivation='None' name='[none:Calculation_1258193146959384577:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[platform]' derivation='None' name='[none:platform:nk]' pivot='key' type='nominal' />
+            <column-instance column='[podcast_index_title]' derivation='None' name='[none:podcast_index_title:nk]' pivot='key' type='nominal' />
+            <column caption='Platform' datatype='string' name='[platform]' role='dimension' type='nominal' />
+            <column caption='Podcast Index Title' datatype='string' name='[podcast_index_title]' role='dimension' type='nominal' />
+            <column caption='Rank' datatype='integer' name='[rank]' role='measure' type='quantitative' />
+            <column caption='Rank Change' datatype='integer' name='[rank_change]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Action (Category Name)]'>
+            <groupfilter function='level-members' level='[category_name]' user:ui-action-filter='[Action1_6F66D5A6A9D84F0B97C2561888C9F4F6]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:podcast_index_title:nk]' kind='hide'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:podcast_index_title:nk]' />
+              <groupfilter function='member' level='[none:podcast_index_title:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Platform Set]</column>
+            <column>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Action (Category Name)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:Calculation_1258193146959384577:qk]' field-type='quantitative' major-origin='0.0' major-spacing='0.5' max='5.0' min='0.0' minor-origin='0.0' minor-spacing='0.25' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='cell-w' value='90' />
+            <format attr='cell-h' value='60' />
+            <format attr='cell' value='30' />
+            <format attr='cell-q' value='150' />
+            <format attr='vertical-align' value='center' />
+            <format attr='text-align' value='left' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[avg:rank:ok]' value='60' />
+            <format attr='width' field='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:podcast_index_title:nk]' value='116' />
+          </style-rule>
+          <style-rule element='field-labels-decoration'>
+            <format attr='font-style' value='normal' />
+            <format attr='font-weight' value='normal' />
+            <format attr='text-orientation' value='0' />
+            <format attr='text-align' value='right' />
+            <format attr='wrap' value='off' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' scope='rows' value='center' />
+            <format attr='vertical-align' scope='rows' value='center' />
+            <format attr='text-align' scope='cols' value='left' />
+            <format attr='vertical-align' scope='cols' value='center' />
+            <format attr='text-format' field='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank_change:qk]' value='' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank_change:qk]' max='25.0' min='-25.0' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='cols' value='0' />
+            <format attr='band-size' scope='rows' value='1' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='in-tooltip' field='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:platform:nk]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='14' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank_change:qk]' />
+              <text column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:podcast_index_title:nk]' />
+              <tooltip column='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[attr:description:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.9670165777206421' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='aspect' value='0' />
+                <format attr='aspect' value='0' />
+                <format attr='aspect' value='0' />
+                <format attr='aspect' value='0' />
+                <format attr='aspect' value='0' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0jlj04j0h6rjw714d3u5p18ogyyf].[avg:rank:ok] / [federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:podcast_index_title:nk])</rows>
+        <cols>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:Calculation_1258193146959384577:qk]</cols>
+        <mark-labels>
+          <mark-label id='0'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:Calculation_1258193146959384577:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[avg:rank:ok]</field>
+                    <field>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:podcast_index_title:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[avg:rank:ok]</field>
+                  <field>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank_change:qk]</field>
+                  <field>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:Calculation_1258193146959384577:qk]</field>
+                  <field>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[none:podcast_index_title:nk]</field>
+                  <field>[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[attr:description:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>20.0</value>
+                <value>-4.0</value>
+                <value>1.0438888888888889</value>
+                <value>&quot;This American Life&quot;</value>
+                <value>&quot;Each week we choose a theme. Then anything can happen. This American Life is true stories that unfold like little movies for radio. Personal stories with funny moments, big feelings, and surprising plot twists. Newsy stories that try to capture what it’s like to be alive right now. It’s the most popular weekly podcast in the world, and winner of the first ever Pulitzer Prize for a radio show or podcast. Hosted by Ira Glass and produced in collaboration with WBEZ Chicago.&quot;</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.582418' y='0.542373' />
+          </mark-label>
+        </mark-labels>
+      </table>
+      <simple-id uuid='{E6B499DB-1946-4BDF-8C0D-FA136D875FD2}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='860' maxwidth='650' minheight='560' minwidth='420' />
+      <datasources>
+        <datasource caption='Top100List+ (Podcast_Query_Output)' name='federated.0jlj04j0h6rjw714d3u5p18ogyyf' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0jlj04j0h6rjw714d3u5p18ogyyf' />
+      <zones>
+        <zone h='100000' id='13' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='89383' id='16' param='horz' type-v2='layout-flow' w='97538' x='1231' y='9684'>
+            <zone h='89383' id='14' type-v2='layout-basic' w='97538' x='1231' y='9684'>
+              <zone h='44692' id='12' name='Top 100 Podcasts' w='97538' x='1231' y='9684'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='44691' id='19' name='Categories' w='97538' x='1231' y='54376'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='8751' id='21' param='horz' type-v2='layout-flow' w='97538' x='1231' y='933'>
+            <zone fixed-size='98' h='8751' id='17' is-fixed='true' mode='radiolist' name='Top 100 Podcasts' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Platform Set]' show-title='false' type-v2='filter' w='16308' x='1231' y='933'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='8751' id='18' name='Top 100 Podcasts' pane-specification-id='14' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank_change:qk]' type-v2='color' w='81230' x='17539' y='933'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='8868' id='20' name='Categories' pane-specification-id='0' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank:qk]' type-v2='color' w='21538' x='70308' y='57060' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='800' minheight='800' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='25' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='24' param='vert' type-v2='layout-flow' w='95734' x='2133' y='1000'>
+                <zone fixed-size='98' h='4250' id='17' mode='dropdown' name='Top 100 Podcasts' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Platform Set]' show-title='false' type-v2='filter' w='95734' x='2133' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36000' id='12' is-fixed='true' name='Top 100 Podcasts' w='95734' x='2133' y='5250'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='18' name='Top 100 Podcasts' pane-specification-id='14' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank_change:qk]' type-v2='color' w='95734' x='2133' y='41250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36000' id='19' is-fixed='true' name='Categories' w='95734' x='2133' y='49375'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='20' name='Categories' pane-specification-id='0' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank:qk]' type-v2='color' w='95734' x='2133' y='85375'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{358FFEBA-1B76-4D9A-A450-B9399A4A49B0}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Top 100 Podcasts'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='radiolist' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Platform Set]' show-title='false' type='filter' />
+            <card pane-specification-id='14' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank_change:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{CFA80DFD-4064-4A6B-A015-99B8C1DF2DA0}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Categories'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='radiolist' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[Platform Set]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0jlj04j0h6rjw714d3u5p18ogyyf].[med:rank:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{9FCEC9B0-BD92-4A68-8300-55379EC19F71}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Categories'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Top 100 Podcasts'>
+          <zoom type='fit-width' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{80391523-A4DF-4CBF-AE54-C0BEC12F5762}' />
+    </window>
+  </windows>
+</workbook>

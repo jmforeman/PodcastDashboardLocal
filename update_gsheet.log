@@ -1,0 +1,1025 @@
+2025-04-13 23:54:15,400 - INFO - Script started.
+2025-04-13 23:54:15,400 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-13 23:54:15,411 - INFO - Opening Google Sheet: 'Podcast_Query_Output'
+2025-04-13 23:54:15,842 - ERROR - Setup error - Google Sheet 'Podcast_Query_Output' not found or not shared correctly.
+2025-04-13 23:54:15,842 - INFO - Script finished.
+2025-04-14 00:03:33,992 - INFO - Script started.
+2025-04-14 00:03:33,993 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-14 00:03:33,994 - INFO - Opening Google Sheet: 'Podcast_Query_Output'
+2025-04-14 00:03:34,502 - ERROR - Setup error - Google Sheet 'Podcast_Query_Output' not found or not shared correctly.
+2025-04-14 00:03:34,502 - INFO - Script finished.
+2025-04-14 00:13:45,384 - INFO - Script started.
+2025-04-14 00:13:45,384 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-14 00:13:45,385 - INFO - Opening Google Sheet: 'Podcast_Query_Output'
+2025-04-14 00:13:45,908 - ERROR - Setup error - Google Sheet 'Podcast_Query_Output' not found or not shared correctly.
+2025-04-14 00:13:45,908 - INFO - Script finished.
+2025-04-14 00:35:52,339 - INFO - Script started.
+2025-04-14 00:35:52,339 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-14 00:35:52,340 - ERROR - A critical setup error occurred: name 'GOOGLE_SHEET_NAME' is not defined
+Traceback (most recent call last):
+  File "C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\update_gsheet.py", line 58, in update_multiple_google_sheets
+    logging.info(f"Opening Google Sheet: '{GOOGLE_SHEET_NAME}'")
+                                           ^^^^^^^^^^^^^^^^^
+NameError: name 'GOOGLE_SHEET_NAME' is not defined. Did you mean: 'GOOGLE_SHEET_ID'?
+2025-04-14 00:35:52,342 - INFO - Script finished.
+2025-04-14 00:39:04,831 - INFO - Script started.
+2025-04-14 00:39:04,831 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-14 00:39:04,832 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-14 00:39:04,832 - ERROR - A critical setup error occurred: 'Client' object has no attribute 'open_by_id'
+Traceback (most recent call last):
+  File "C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\update_gsheet.py", line 60, in update_multiple_google_sheets
+    spreadsheet = gc.open_by_id(GOOGLE_SHEET_ID)
+                  ^^^^^^^^^^^^^
+AttributeError: 'Client' object has no attribute 'open_by_id'. Did you mean: 'open_by_key'?
+2025-04-14 00:39:04,833 - INFO - Script finished.
+2025-04-14 00:40:30,768 - INFO - Script started.
+2025-04-14 00:40:30,768 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-14 00:40:30,769 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-14 00:40:31,651 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-14 00:40:31,654 - INFO - --- Processing Worksheet: 'Recent Data Tab 1' ---
+2025-04-14 00:40:31,654 - INFO - Executing SQL query: SELECT * FROM Top100Lists WHERE condition1 ORDER BY timestamp DESC LIMIT 100...
+2025-04-14 00:40:31,657 - ERROR - Unexpected error processing worksheet 'Recent Data Tab 1': Execution failed on sql 'SELECT * FROM Top100Lists WHERE condition1 ORDER BY timestamp DESC LIMIT 100': no such column: condition1
+Traceback (most recent call last):
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 2674, in execute
+    cur.execute(sql, *args)
+    ~~~~~~~~~~~^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: condition1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\update_gsheet.py", line 75, in update_multiple_google_sheets
+    df = pd.read_sql_query(query, conn)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 526, in read_sql_query
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype_backend=dtype_backend,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 2738, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 2686, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql 'SELECT * FROM Top100Lists WHERE condition1 ORDER BY timestamp DESC LIMIT 100': no such column: condition1
+2025-04-14 00:40:31,672 - INFO - --- Processing Worksheet: 'Category Summary' ---
+2025-04-14 00:40:31,673 - INFO - Executing SQL query: SELECT * FROM Podcasts GROUP BY category...
+2025-04-14 00:40:31,673 - ERROR - Unexpected error processing worksheet 'Category Summary': Execution failed on sql 'SELECT * FROM Podcasts GROUP BY category': no such column: category
+Traceback (most recent call last):
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 2674, in execute
+    cur.execute(sql, *args)
+    ~~~~~~~~~~~^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: category
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\update_gsheet.py", line 75, in update_multiple_google_sheets
+    df = pd.read_sql_query(query, conn)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 526, in read_sql_query
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype_backend=dtype_backend,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 2738, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 2686, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql 'SELECT * FROM Podcasts GROUP BY category': no such column: category
+2025-04-14 00:40:31,673 - INFO - Database connection closed.
+2025-04-14 00:40:31,673 - INFO - Script finished.
+2025-04-14 00:49:21,248 - INFO - Script started.
+2025-04-14 00:49:21,248 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-14 00:49:21,249 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-14 00:49:21,971 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-14 00:49:21,971 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-14 00:49:21,971 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-14 00:49:21,981 - INFO - Successfully read 800 rows from the database for 'Top100List'.
+2025-04-14 00:49:22,197 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-14 00:49:22,197 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-14 00:49:22,546 - INFO - Writing 801 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-14 00:49:23,013 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-14 00:49:23,013 - INFO - --- Processing Worksheet: 'DetailsByCategory' ---
+2025-04-14 00:49:23,013 - INFO - Executing SQL query: SELECT * FROM Podcasts GROUP BY category...
+2025-04-14 00:49:23,013 - ERROR - Unexpected error processing worksheet 'DetailsByCategory': Execution failed on sql 'SELECT * FROM Podcasts GROUP BY category': no such column: category
+Traceback (most recent call last):
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 2674, in execute
+    cur.execute(sql, *args)
+    ~~~~~~~~~~~^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: category
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\update_gsheet.py", line 75, in update_multiple_google_sheets
+    df = pd.read_sql_query(query, conn)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 526, in read_sql_query
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype_backend=dtype_backend,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 2738, in read_query
+    cursor = self.execute(sql, params)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\sql.py", line 2686, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql 'SELECT * FROM Podcasts GROUP BY category': no such column: category
+2025-04-14 00:49:23,015 - INFO - Database connection closed.
+2025-04-14 00:49:23,015 - INFO - Script finished.
+2025-04-14 00:51:20,284 - INFO - Script started.
+2025-04-14 00:51:20,284 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-14 00:51:20,286 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-14 00:51:21,195 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-14 00:51:21,196 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-14 00:51:21,196 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-14 00:51:21,198 - INFO - Successfully read 800 rows from the database for 'Top100List'.
+2025-04-14 00:51:21,396 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-14 00:51:21,396 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-14 00:51:21,707 - INFO - Writing 801 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-14 00:51:22,108 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-14 00:51:22,108 - INFO - --- Processing Worksheet: 'DetailsByCategory' ---
+2025-04-14 00:51:22,108 - INFO - Executing SQL query: SELECT * FROM Podcasts GROUP BY categories...
+2025-04-14 00:51:22,110 - INFO - Successfully read 99 rows from the database for 'DetailsByCategory'.
+2025-04-14 00:51:22,322 - INFO - Found existing worksheet: 'DetailsByCategory'.
+2025-04-14 00:51:22,322 - INFO - Clearing existing data from worksheet 'DetailsByCategory'.
+2025-04-14 00:51:22,605 - INFO - Writing 100 rows (incl. header) to 'DetailsByCategory' starting at A1.
+2025-04-14 00:51:22,881 - INFO - Successfully updated worksheet 'DetailsByCategory'.
+2025-04-14 00:51:22,882 - INFO - Database connection closed.
+2025-04-14 00:51:22,882 - INFO - Script finished.
+2025-04-14 15:31:16,913 - INFO - Script started.
+2025-04-14 15:31:16,913 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-14 15:31:16,924 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-14 15:31:18,020 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-14 15:31:18,021 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-14 15:31:18,021 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-14 15:31:18,024 - INFO - Successfully read 1000 rows from the database for 'Top100List'.
+2025-04-14 15:31:18,131 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-14 15:31:18,131 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-14 15:31:18,303 - INFO - Writing 1001 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-14 15:31:19,886 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-14 15:31:19,886 - INFO - --- Processing Worksheet: 'DetailsByCategory' ---
+2025-04-14 15:31:19,886 - INFO - Executing SQL query: SELECT * FROM Podcasts GROUP BY categories...
+2025-04-14 15:31:19,890 - INFO - Successfully read 102 rows from the database for 'DetailsByCategory'.
+2025-04-14 15:31:20,008 - INFO - Found existing worksheet: 'DetailsByCategory'.
+2025-04-14 15:31:20,008 - INFO - Clearing existing data from worksheet 'DetailsByCategory'.
+2025-04-14 15:31:20,159 - INFO - Writing 103 rows (incl. header) to 'DetailsByCategory' starting at A1.
+2025-04-14 15:31:20,383 - INFO - Successfully updated worksheet 'DetailsByCategory'.
+2025-04-14 15:31:20,383 - INFO - Database connection closed.
+2025-04-14 15:31:20,383 - INFO - Script finished.
+2025-04-15 15:35:51,130 - INFO - Script started.
+2025-04-15 15:35:51,130 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-15 15:35:51,141 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-15 15:35:52,188 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-15 15:35:52,190 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-15 15:35:52,190 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-15 15:35:52,199 - INFO - Successfully read 1200 rows from the database for 'Top100List'.
+2025-04-15 15:35:52,282 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-15 15:35:52,282 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-15 15:35:52,407 - INFO - Writing 1201 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-15 15:35:53,969 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-15 15:35:53,969 - INFO - --- Processing Worksheet: 'DetailsByCategory' ---
+2025-04-15 15:35:53,969 - INFO - Executing SQL query: SELECT * FROM Podcasts GROUP BY categories...
+2025-04-15 15:35:53,975 - INFO - Successfully read 102 rows from the database for 'DetailsByCategory'.
+2025-04-15 15:35:54,063 - INFO - Found existing worksheet: 'DetailsByCategory'.
+2025-04-15 15:35:54,063 - INFO - Clearing existing data from worksheet 'DetailsByCategory'.
+2025-04-15 15:35:54,165 - INFO - Writing 103 rows (incl. header) to 'DetailsByCategory' starting at A1.
+2025-04-15 15:35:54,324 - INFO - Successfully updated worksheet 'DetailsByCategory'.
+2025-04-15 15:35:54,324 - INFO - Database connection closed.
+2025-04-15 15:35:54,324 - INFO - Script finished.
+2025-04-16 05:30:03,548 - INFO - Script started.
+2025-04-16 05:30:03,548 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-16 05:30:03,557 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-16 05:30:04,896 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-16 05:30:04,900 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-16 05:30:04,900 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-16 05:30:04,910 - INFO - Successfully read 1400 rows from the database for 'Top100List'.
+2025-04-16 05:30:05,006 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-16 05:30:05,006 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-16 05:30:05,145 - INFO - Writing 1401 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-16 05:30:06,741 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-16 05:30:06,741 - INFO - --- Processing Worksheet: 'DetailsByCategory' ---
+2025-04-16 05:30:06,741 - INFO - Executing SQL query: SELECT * FROM Podcasts GROUP BY categories...
+2025-04-16 05:30:06,743 - INFO - Successfully read 105 rows from the database for 'DetailsByCategory'.
+2025-04-16 05:30:06,838 - INFO - Found existing worksheet: 'DetailsByCategory'.
+2025-04-16 05:30:06,838 - INFO - Clearing existing data from worksheet 'DetailsByCategory'.
+2025-04-16 05:30:06,962 - INFO - Writing 106 rows (incl. header) to 'DetailsByCategory' starting at A1.
+2025-04-16 05:30:07,132 - INFO - Successfully updated worksheet 'DetailsByCategory'.
+2025-04-16 05:30:07,132 - INFO - Database connection closed.
+2025-04-16 05:30:07,132 - INFO - Script finished.
+2025-04-16 16:43:56,015 - INFO - Script started.
+2025-04-16 16:43:56,015 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-16 16:43:56,024 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-16 16:43:56,843 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-16 16:43:56,844 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-16 16:43:56,844 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-16 16:43:56,850 - INFO - Successfully read 1400 rows from the database for 'Top100List'.
+2025-04-16 16:43:57,067 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-16 16:43:57,067 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-16 16:43:57,474 - INFO - Writing 1401 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-16 16:43:58,253 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-16 16:43:58,253 - INFO - --- Processing Worksheet: 'DetailsByCategory' ---
+2025-04-16 16:43:58,253 - INFO - Executing SQL query: SELECT * FROM Podcasts GROUP BY categories...
+2025-04-16 16:43:58,256 - INFO - Successfully read 105 rows from the database for 'DetailsByCategory'.
+2025-04-16 16:43:58,560 - INFO - Found existing worksheet: 'DetailsByCategory'.
+2025-04-16 16:43:58,560 - INFO - Clearing existing data from worksheet 'DetailsByCategory'.
+2025-04-16 16:43:58,822 - INFO - Writing 106 rows (incl. header) to 'DetailsByCategory' starting at A1.
+2025-04-16 16:43:59,226 - INFO - Successfully updated worksheet 'DetailsByCategory'.
+2025-04-16 16:43:59,226 - INFO - Database connection closed.
+2025-04-16 16:43:59,226 - INFO - Script finished.
+2025-04-16 16:52:33,111 - INFO - Script started.
+2025-04-16 16:52:33,111 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-16 16:52:33,113 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-16 16:52:33,811 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-16 16:52:33,811 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-16 16:52:33,811 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-16 16:52:33,815 - INFO - Successfully read 1400 rows from the database for 'Top100List'.
+2025-04-16 16:52:34,061 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-16 16:52:34,061 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-16 16:52:34,376 - INFO - Writing 1401 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-16 16:52:34,814 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-16 16:52:34,814 - INFO - --- Processing Worksheet: 'DetailsByCategory' ---
+2025-04-16 16:52:34,814 - INFO - Executing SQL query: SELECT * FROM Podcasts GROUP BY categories...
+2025-04-16 16:52:34,816 - INFO - Successfully read 105 rows from the database for 'DetailsByCategory'.
+2025-04-16 16:52:35,040 - INFO - Found existing worksheet: 'DetailsByCategory'.
+2025-04-16 16:52:35,040 - INFO - Clearing existing data from worksheet 'DetailsByCategory'.
+2025-04-16 16:52:35,320 - INFO - Writing 106 rows (incl. header) to 'DetailsByCategory' starting at A1.
+2025-04-16 16:52:35,718 - INFO - Successfully updated worksheet 'DetailsByCategory'.
+2025-04-16 16:52:35,718 - INFO - Database connection closed.
+2025-04-16 16:52:35,718 - INFO - Script finished.
+2025-04-16 17:05:39,898 - INFO - Script started.
+2025-04-16 17:05:39,898 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-16 17:05:39,899 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-16 17:05:40,646 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-16 17:05:40,647 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-16 17:05:40,647 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-16 17:05:40,650 - INFO - Successfully read 1400 rows from the database for 'Top100List'.
+2025-04-16 17:05:40,936 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-16 17:05:40,936 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-16 17:05:41,268 - INFO - Writing 1401 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-16 17:05:41,737 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-16 17:05:41,737 - INFO - --- Processing Worksheet: 'Details' ---
+2025-04-16 17:05:41,737 - INFO - Executing SQL query: SELECT * FROM Podcasts...
+2025-04-16 17:05:41,739 - INFO - Successfully read 179 rows from the database for 'Details'.
+2025-04-16 17:05:41,982 - INFO - Found existing worksheet: 'Details'.
+2025-04-16 17:05:41,982 - INFO - Clearing existing data from worksheet 'Details'.
+2025-04-16 17:05:42,273 - INFO - Writing 180 rows (incl. header) to 'Details' starting at A1.
+2025-04-16 17:05:42,727 - INFO - Successfully updated worksheet 'Details'.
+2025-04-16 17:05:42,727 - INFO - Database connection closed.
+2025-04-16 17:05:42,727 - INFO - Script finished.
+2025-04-17 05:30:03,207 - INFO - Script started.
+2025-04-17 05:30:03,207 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-17 05:30:03,215 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-17 05:30:05,637 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-17 05:30:05,638 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-17 05:30:05,639 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-17 05:30:05,642 - INFO - Successfully read 1600 rows from the database for 'Top100List'.
+2025-04-17 05:30:05,728 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-17 05:30:05,728 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-17 05:30:05,863 - INFO - Writing 1601 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-17 05:30:07,470 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-17 05:30:07,470 - INFO - --- Processing Worksheet: 'Details' ---
+2025-04-17 05:30:07,470 - INFO - Executing SQL query: SELECT * FROM Podcasts...
+2025-04-17 05:30:07,472 - INFO - Successfully read 185 rows from the database for 'Details'.
+2025-04-17 05:30:07,577 - INFO - Found existing worksheet: 'Details'.
+2025-04-17 05:30:07,578 - INFO - Clearing existing data from worksheet 'Details'.
+2025-04-17 05:30:07,700 - INFO - Writing 186 rows (incl. header) to 'Details' starting at A1.
+2025-04-17 05:30:07,926 - INFO - Successfully updated worksheet 'Details'.
+2025-04-17 05:30:07,926 - INFO - Database connection closed.
+2025-04-17 05:30:07,926 - INFO - Script finished.
+2025-04-17 18:23:54,385 - INFO - Script started.
+2025-04-17 18:23:54,385 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-17 18:23:54,398 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-17 18:23:55,630 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-17 18:23:55,632 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-17 18:23:55,632 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-17 18:23:55,635 - INFO - Successfully read 1600 rows from the database for 'Top100List'.
+2025-04-17 18:23:55,742 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-17 18:23:55,742 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-17 18:23:55,889 - INFO - Writing 1601 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-17 18:23:57,810 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-17 18:23:57,811 - INFO - --- Processing Worksheet: 'Details' ---
+2025-04-17 18:23:57,811 - INFO - Executing SQL query: SELECT * FROM Podcasts...
+2025-04-17 18:23:57,813 - INFO - Successfully read 185 rows from the database for 'Details'.
+2025-04-17 18:23:57,903 - INFO - Found existing worksheet: 'Details'.
+2025-04-17 18:23:57,903 - INFO - Clearing existing data from worksheet 'Details'.
+2025-04-17 18:23:58,026 - INFO - Writing 186 rows (incl. header) to 'Details' starting at A1.
+2025-04-17 18:23:58,246 - INFO - Successfully updated worksheet 'Details'.
+2025-04-17 18:23:58,246 - INFO - Database connection closed.
+2025-04-17 18:23:58,246 - INFO - Script finished.
+2025-04-18 05:30:03,628 - INFO - Script started.
+2025-04-18 05:30:03,628 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-18 05:30:03,630 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-18 05:30:05,015 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-18 05:30:05,016 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-18 05:30:05,016 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-18 05:30:05,020 - INFO - Successfully read 1800 rows from the database for 'Top100List'.
+2025-04-18 05:30:05,116 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-18 05:30:05,116 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-18 05:30:05,249 - INFO - Writing 1801 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-18 05:30:05,631 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-18 05:30:05,632 - INFO - --- Processing Worksheet: 'Details' ---
+2025-04-18 05:30:05,632 - INFO - Executing SQL query: SELECT * FROM Podcasts...
+2025-04-18 05:30:05,633 - INFO - Successfully read 220 rows from the database for 'Details'.
+2025-04-18 05:30:05,728 - INFO - Found existing worksheet: 'Details'.
+2025-04-18 05:30:05,728 - INFO - Clearing existing data from worksheet 'Details'.
+2025-04-18 05:30:05,842 - INFO - Writing 221 rows (incl. header) to 'Details' starting at A1.
+2025-04-18 05:30:06,053 - INFO - Successfully updated worksheet 'Details'.
+2025-04-18 05:30:06,053 - INFO - Database connection closed.
+2025-04-18 05:30:06,053 - INFO - Script finished.
+2025-04-18 12:45:32,394 - INFO - Script started.
+2025-04-18 12:45:32,394 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-18 12:45:32,403 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-18 13:09:22,172 - INFO - Script started.
+2025-04-18 13:09:22,172 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-18 13:09:22,173 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-18 13:09:23,321 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-18 13:09:23,322 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-18 13:09:23,322 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-18 13:09:23,326 - INFO - Successfully read 1800 rows from the database for 'Top100List'.
+2025-04-18 13:09:23,504 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-18 13:09:23,504 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-18 13:09:23,634 - INFO - Writing 1801 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-18 13:09:25,244 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-18 13:09:25,244 - INFO - --- Processing Worksheet: 'Details' ---
+2025-04-18 13:09:25,244 - INFO - Executing SQL query: SELECT * FROM Podcasts...
+2025-04-18 13:09:25,246 - INFO - Successfully read 211 rows from the database for 'Details'.
+2025-04-18 13:09:25,407 - INFO - Found existing worksheet: 'Details'.
+2025-04-18 13:09:25,407 - INFO - Clearing existing data from worksheet 'Details'.
+2025-04-18 13:09:25,535 - INFO - Writing 212 rows (incl. header) to 'Details' starting at A1.
+2025-04-18 13:09:25,770 - INFO - Successfully updated worksheet 'Details'.
+2025-04-18 13:09:25,770 - INFO - --- Processing Worksheet: 'PodcastCategories' ---
+2025-04-18 13:09:25,770 - INFO - Executing SQL query: SELECT * FROM PodcastCategories...
+2025-04-18 13:09:25,771 - INFO - Successfully read 614 rows from the database for 'PodcastCategories'.
+2025-04-18 13:09:25,868 - WARNING - Worksheet 'PodcastCategories' not found. Skipping update for this sheet.
+2025-04-18 13:09:25,868 - INFO - --- Processing Worksheet: 'Categories' ---
+2025-04-18 13:09:25,868 - INFO - Executing SQL query: SELECT * FROM Categories...
+2025-04-18 13:09:25,869 - INFO - Successfully read 61 rows from the database for 'Categories'.
+2025-04-18 13:09:25,981 - WARNING - Worksheet 'Categories' not found. Skipping update for this sheet.
+2025-04-18 13:09:25,981 - INFO - Database connection closed.
+2025-04-18 13:09:25,981 - INFO - Script finished.
+2025-04-18 13:10:22,542 - INFO - Script started.
+2025-04-18 13:10:22,542 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-18 13:10:22,543 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-18 13:10:23,295 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-18 13:10:23,296 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-18 13:10:23,296 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-18 13:10:23,299 - INFO - Successfully read 1800 rows from the database for 'Top100List'.
+2025-04-18 13:10:23,385 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-18 13:10:23,385 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-18 13:10:23,516 - INFO - Writing 1801 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-18 13:10:24,032 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-18 13:10:24,032 - INFO - --- Processing Worksheet: 'Details' ---
+2025-04-18 13:10:24,032 - INFO - Executing SQL query: SELECT * FROM Podcasts...
+2025-04-18 13:10:24,034 - INFO - Successfully read 211 rows from the database for 'Details'.
+2025-04-18 13:10:24,141 - INFO - Found existing worksheet: 'Details'.
+2025-04-18 13:10:24,141 - INFO - Clearing existing data from worksheet 'Details'.
+2025-04-18 13:10:24,261 - INFO - Writing 212 rows (incl. header) to 'Details' starting at A1.
+2025-04-18 13:10:24,498 - INFO - Successfully updated worksheet 'Details'.
+2025-04-18 13:10:24,498 - INFO - --- Processing Worksheet: 'PodcastCategories' ---
+2025-04-18 13:10:24,498 - INFO - Executing SQL query: SELECT * FROM PodcastCategories...
+2025-04-18 13:10:24,499 - INFO - Successfully read 614 rows from the database for 'PodcastCategories'.
+2025-04-18 13:10:24,599 - INFO - Found existing worksheet: 'PodcastCategories'.
+2025-04-18 13:10:24,599 - INFO - Clearing existing data from worksheet 'PodcastCategories'.
+2025-04-18 13:10:24,717 - INFO - Writing 615 rows (incl. header) to 'PodcastCategories' starting at A1.
+2025-04-18 13:10:24,851 - INFO - Successfully updated worksheet 'PodcastCategories'.
+2025-04-18 13:10:24,851 - INFO - --- Processing Worksheet: 'Categories' ---
+2025-04-18 13:10:24,851 - INFO - Executing SQL query: SELECT * FROM Categories...
+2025-04-18 13:10:24,852 - INFO - Successfully read 61 rows from the database for 'Categories'.
+2025-04-18 13:10:24,955 - INFO - Found existing worksheet: 'Categories'.
+2025-04-18 13:10:24,955 - INFO - Clearing existing data from worksheet 'Categories'.
+2025-04-18 13:10:25,086 - INFO - Writing 62 rows (incl. header) to 'Categories' starting at A1.
+2025-04-18 13:10:25,204 - INFO - Successfully updated worksheet 'Categories'.
+2025-04-18 13:10:25,204 - INFO - Database connection closed.
+2025-04-18 13:10:25,204 - INFO - Script finished.
+2025-04-18 13:53:48,364 - INFO - Script started.
+2025-04-18 13:53:48,364 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-18 13:53:48,375 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-18 13:53:48,999 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-18 13:53:49,000 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-18 13:53:49,000 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-18 13:53:49,004 - INFO - Successfully read 1800 rows from the database for 'Top100List'.
+2025-04-18 13:53:49,080 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-18 13:53:49,080 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-18 13:53:49,217 - INFO - Writing 1801 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-18 13:53:50,941 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-18 13:53:50,941 - INFO - --- Processing Worksheet: 'Details' ---
+2025-04-18 13:53:50,941 - INFO - Executing SQL query: SELECT * FROM Podcasts...
+2025-04-18 13:53:50,943 - INFO - Successfully read 211 rows from the database for 'Details'.
+2025-04-18 13:53:51,030 - INFO - Found existing worksheet: 'Details'.
+2025-04-18 13:53:51,030 - INFO - Clearing existing data from worksheet 'Details'.
+2025-04-18 13:53:51,143 - INFO - Writing 212 rows (incl. header) to 'Details' starting at A1.
+2025-04-18 13:53:51,377 - INFO - Successfully updated worksheet 'Details'.
+2025-04-18 13:53:51,377 - INFO - --- Processing Worksheet: 'PodcastCategories' ---
+2025-04-18 13:53:51,377 - INFO - Executing SQL query: SELECT * FROM PodcastCategories...
+2025-04-18 13:53:51,378 - INFO - Successfully read 614 rows from the database for 'PodcastCategories'.
+2025-04-18 13:53:51,458 - INFO - Found existing worksheet: 'PodcastCategories'.
+2025-04-18 13:53:51,458 - INFO - Clearing existing data from worksheet 'PodcastCategories'.
+2025-04-18 13:53:51,566 - INFO - Writing 615 rows (incl. header) to 'PodcastCategories' starting at A1.
+2025-04-18 13:53:51,695 - INFO - Successfully updated worksheet 'PodcastCategories'.
+2025-04-18 13:53:51,696 - INFO - --- Processing Worksheet: 'Categories' ---
+2025-04-18 13:53:51,696 - INFO - Executing SQL query: SELECT * FROM Categories...
+2025-04-18 13:53:51,696 - INFO - Successfully read 61 rows from the database for 'Categories'.
+2025-04-18 13:53:51,810 - INFO - Found existing worksheet: 'Categories'.
+2025-04-18 13:53:51,810 - INFO - Clearing existing data from worksheet 'Categories'.
+2025-04-18 13:53:51,917 - INFO - Writing 62 rows (incl. header) to 'Categories' starting at A1.
+2025-04-18 13:53:52,027 - INFO - Successfully updated worksheet 'Categories'.
+2025-04-18 13:53:52,027 - INFO - Database connection closed.
+2025-04-18 13:53:52,027 - INFO - Script finished.
+2025-04-19 05:30:03,615 - INFO - Script started.
+2025-04-19 05:30:03,615 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-19 05:30:03,623 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-19 05:30:04,793 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-19 05:30:04,794 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-19 05:30:04,794 - INFO - Executing SQL query: SELECT * FROM Top100Lists...
+2025-04-19 05:30:04,798 - INFO - Successfully read 2000 rows from the database for 'Top100List'.
+2025-04-19 05:30:04,874 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-19 05:30:04,875 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-19 05:30:05,002 - INFO - Writing 2001 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-19 05:30:06,728 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-19 05:30:06,728 - INFO - --- Processing Worksheet: 'Details' ---
+2025-04-19 05:30:06,728 - INFO - Executing SQL query: SELECT * FROM Podcasts...
+2025-04-19 05:30:06,730 - INFO - Successfully read 219 rows from the database for 'Details'.
+2025-04-19 05:30:06,825 - INFO - Found existing worksheet: 'Details'.
+2025-04-19 05:30:06,825 - INFO - Clearing existing data from worksheet 'Details'.
+2025-04-19 05:30:06,962 - INFO - Writing 220 rows (incl. header) to 'Details' starting at A1.
+2025-04-19 05:30:07,188 - INFO - Successfully updated worksheet 'Details'.
+2025-04-19 05:30:07,188 - INFO - --- Processing Worksheet: 'PodcastCategories' ---
+2025-04-19 05:30:07,188 - INFO - Executing SQL query: SELECT * FROM PodcastCategories...
+2025-04-19 05:30:07,189 - INFO - Successfully read 633 rows from the database for 'PodcastCategories'.
+2025-04-19 05:30:07,274 - INFO - Found existing worksheet: 'PodcastCategories'.
+2025-04-19 05:30:07,274 - INFO - Clearing existing data from worksheet 'PodcastCategories'.
+2025-04-19 05:30:07,389 - INFO - Writing 634 rows (incl. header) to 'PodcastCategories' starting at A1.
+2025-04-19 05:30:07,513 - INFO - Successfully updated worksheet 'PodcastCategories'.
+2025-04-19 05:30:07,513 - INFO - --- Processing Worksheet: 'Categories' ---
+2025-04-19 05:30:07,513 - INFO - Executing SQL query: SELECT * FROM Categories...
+2025-04-19 05:30:07,513 - INFO - Successfully read 61 rows from the database for 'Categories'.
+2025-04-19 05:30:07,607 - INFO - Found existing worksheet: 'Categories'.
+2025-04-19 05:30:07,607 - INFO - Clearing existing data from worksheet 'Categories'.
+2025-04-19 05:30:07,712 - INFO - Writing 62 rows (incl. header) to 'Categories' starting at A1.
+2025-04-19 05:30:07,829 - INFO - Successfully updated worksheet 'Categories'.
+2025-04-19 05:30:07,829 - INFO - Database connection closed.
+2025-04-19 05:30:07,829 - INFO - Script finished.
+2025-04-19 10:21:35,770 - INFO - Script started.
+2025-04-19 10:21:35,770 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-19 10:21:35,781 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-19 10:21:36,735 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-19 10:21:36,735 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-19 10:21:36,736 - INFO - Executing SQL query: SELECT * FROM vw_CurrentPodcastDetailsWithCategories...
+2025-04-19 10:21:36,757 - INFO - Successfully read 559 rows from the database for 'Top100List'.
+2025-04-19 10:21:36,833 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-19 10:21:36,833 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-19 10:21:36,945 - INFO - Writing 560 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-19 10:21:36,949 - ERROR - Unexpected error processing worksheet 'Top100List': Out of range float values are not JSON compliant: nan
+Traceback (most recent call last):
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 510, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant: nan
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\update_gsheet.py", line 110, in update_multiple_google_sheets
+    worksheet.update(range_name=START_CELL, values=data_to_write, value_input_option='USER_ENTERED')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\worksheet.py", line 1242, in update
+    response = self.client.values_update(
+        self.spreadsheet_id,
+    ...<2 lines>...
+        body={"values": values, "majorDimension": major_dimension},
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 173, in values_update
+    r = self.request("put", url, params=params, json=body)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 114, in request
+    response = self.session.request(
+        method=method,
+    ...<6 lines>...
+        timeout=self.timeout,
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\auth\transport\requests.py", line 537, in request
+    response = super(AuthorizedSession, self).request(
+        method,
+    ...<4 lines>...
+        **kwargs
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 370, in prepare
+    self.prepare_body(data, files, json)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 512, in prepare_body
+    raise InvalidJSONError(ve, request=self)
+requests.exceptions.InvalidJSONError: Out of range float values are not JSON compliant: nan
+2025-04-19 10:21:37,016 - INFO - --- Processing Worksheet: 'NewEntries' ---
+2025-04-19 10:21:37,016 - INFO - Executing SQL query: SELECT * FROM vw_NewEntries...
+2025-04-19 10:21:37,019 - INFO - Successfully read 20 rows from the database for 'NewEntries'.
+2025-04-19 10:21:37,088 - INFO - Found existing worksheet: 'NewEntries'.
+2025-04-19 10:21:37,088 - INFO - Clearing existing data from worksheet 'NewEntries'.
+2025-04-19 10:21:37,187 - INFO - Writing 21 rows (incl. header) to 'NewEntries' starting at A1.
+2025-04-19 10:21:37,316 - INFO - Successfully updated worksheet 'NewEntries'.
+2025-04-19 10:21:37,316 - INFO - --- Processing Worksheet: 'PlatformOverlap' ---
+2025-04-19 10:21:37,316 - INFO - Executing SQL query: SELECT * FROM vw_PlatformOverlap...
+2025-04-19 10:21:37,318 - INFO - Successfully read 43 rows from the database for 'PlatformOverlap'.
+2025-04-19 10:21:37,394 - INFO - Found existing worksheet: 'PlatformOverlap'.
+2025-04-19 10:21:37,394 - INFO - Clearing existing data from worksheet 'PlatformOverlap'.
+2025-04-19 10:21:37,527 - INFO - Writing 44 rows (incl. header) to 'PlatformOverlap' starting at A1.
+2025-04-19 10:21:37,734 - INFO - Successfully updated worksheet 'PlatformOverlap'.
+2025-04-19 10:21:37,734 - INFO - --- Processing Worksheet: 'RankChanges' ---
+2025-04-19 10:21:37,735 - INFO - Executing SQL query: SELECT * FROM vw_RankChanges...
+2025-04-19 10:21:37,741 - INFO - Successfully read 2000 rows from the database for 'RankChanges'.
+2025-04-19 10:21:37,819 - INFO - Found existing worksheet: 'RankChanges'.
+2025-04-19 10:21:37,819 - INFO - Clearing existing data from worksheet 'RankChanges'.
+2025-04-19 10:21:37,915 - INFO - Writing 2001 rows (incl. header) to 'RankChanges' starting at A1.
+2025-04-19 10:21:37,916 - ERROR - Unexpected error processing worksheet 'RankChanges': Out of range float values are not JSON compliant: nan
+Traceback (most recent call last):
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 510, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant: nan
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\update_gsheet.py", line 110, in update_multiple_google_sheets
+    worksheet.update(range_name=START_CELL, values=data_to_write, value_input_option='USER_ENTERED')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\worksheet.py", line 1242, in update
+    response = self.client.values_update(
+        self.spreadsheet_id,
+    ...<2 lines>...
+        body={"values": values, "majorDimension": major_dimension},
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 173, in values_update
+    r = self.request("put", url, params=params, json=body)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 114, in request
+    response = self.session.request(
+        method=method,
+    ...<6 lines>...
+        timeout=self.timeout,
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\auth\transport\requests.py", line 537, in request
+    response = super(AuthorizedSession, self).request(
+        method,
+    ...<4 lines>...
+        **kwargs
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 370, in prepare
+    self.prepare_body(data, files, json)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 512, in prepare_body
+    raise InvalidJSONError(ve, request=self)
+requests.exceptions.InvalidJSONError: Out of range float values are not JSON compliant: nan
+2025-04-19 10:21:37,917 - INFO - --- Processing Worksheet: 'TimeOnList' ---
+2025-04-19 10:21:37,917 - INFO - Executing SQL query: SELECT * FROM vw_TimeOnList...
+2025-04-19 10:21:37,920 - INFO - Successfully read 302 rows from the database for 'TimeOnList'.
+2025-04-19 10:21:37,982 - INFO - Found existing worksheet: 'TimeOnList'.
+2025-04-19 10:21:37,982 - INFO - Clearing existing data from worksheet 'TimeOnList'.
+2025-04-19 10:21:38,088 - INFO - Writing 303 rows (incl. header) to 'TimeOnList' starting at A1.
+2025-04-19 10:21:38,203 - INFO - Successfully updated worksheet 'TimeOnList'.
+2025-04-19 10:21:38,204 - INFO - Database connection closed.
+2025-04-19 10:21:38,204 - INFO - Script finished.
+2025-04-19 10:39:16,867 - INFO - Script started.
+2025-04-19 10:39:16,867 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-19 10:39:16,868 - INFO - Opening Google Sheet: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-19 10:39:17,822 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-19 10:39:17,823 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-19 10:39:17,823 - INFO - Executing SQL query: SELECT * FROM vw_CurrentPodcastDetailsWithCategories...
+2025-04-19 10:39:17,842 - INFO - Successfully read 559 rows from the database for 'Top100List'.
+2025-04-19 10:39:17,927 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-19 10:39:17,927 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-19 10:39:18,040 - INFO - Writing 560 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-19 10:39:18,042 - ERROR - Unexpected error processing worksheet 'Top100List': Out of range float values are not JSON compliant: nan
+Traceback (most recent call last):
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 510, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant: nan
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\update_gsheet.py", line 110, in update_multiple_google_sheets
+    worksheet.update(range_name=START_CELL, values=data_to_write, value_input_option='USER_ENTERED')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\worksheet.py", line 1242, in update
+    response = self.client.values_update(
+        self.spreadsheet_id,
+    ...<2 lines>...
+        body={"values": values, "majorDimension": major_dimension},
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 173, in values_update
+    r = self.request("put", url, params=params, json=body)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 114, in request
+    response = self.session.request(
+        method=method,
+    ...<6 lines>...
+        timeout=self.timeout,
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\auth\transport\requests.py", line 537, in request
+    response = super(AuthorizedSession, self).request(
+        method,
+    ...<4 lines>...
+        **kwargs
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 370, in prepare
+    self.prepare_body(data, files, json)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 512, in prepare_body
+    raise InvalidJSONError(ve, request=self)
+requests.exceptions.InvalidJSONError: Out of range float values are not JSON compliant: nan
+2025-04-19 10:39:18,046 - INFO - --- Processing Worksheet: 'NewEntries' ---
+2025-04-19 10:39:18,046 - INFO - Executing SQL query: SELECT * FROM vw_NewEntries...
+2025-04-19 10:39:18,049 - INFO - Successfully read 20 rows from the database for 'NewEntries'.
+2025-04-19 10:39:18,117 - INFO - Found existing worksheet: 'NewEntries'.
+2025-04-19 10:39:18,117 - INFO - Clearing existing data from worksheet 'NewEntries'.
+2025-04-19 10:39:19,036 - INFO - Writing 21 rows (incl. header) to 'NewEntries' starting at A1.
+2025-04-19 10:39:19,142 - INFO - Successfully updated worksheet 'NewEntries'.
+2025-04-19 10:39:19,143 - INFO - --- Processing Worksheet: 'PlatformOverlap' ---
+2025-04-19 10:39:19,143 - INFO - Executing SQL query: SELECT * FROM vw_PlatformOverlap...
+2025-04-19 10:39:19,144 - INFO - Successfully read 43 rows from the database for 'PlatformOverlap'.
+2025-04-19 10:39:19,215 - INFO - Found existing worksheet: 'PlatformOverlap'.
+2025-04-19 10:39:19,215 - INFO - Clearing existing data from worksheet 'PlatformOverlap'.
+2025-04-19 10:39:19,320 - INFO - Writing 44 rows (incl. header) to 'PlatformOverlap' starting at A1.
+2025-04-19 10:39:19,420 - INFO - Successfully updated worksheet 'PlatformOverlap'.
+2025-04-19 10:39:19,420 - INFO - --- Processing Worksheet: 'RankChanges' ---
+2025-04-19 10:39:19,420 - INFO - Executing SQL query: SELECT * FROM vw_RankChanges...
+2025-04-19 10:39:19,427 - INFO - Successfully read 2000 rows from the database for 'RankChanges'.
+2025-04-19 10:39:19,504 - INFO - Found existing worksheet: 'RankChanges'.
+2025-04-19 10:39:19,504 - INFO - Clearing existing data from worksheet 'RankChanges'.
+2025-04-19 10:39:19,605 - INFO - Writing 2001 rows (incl. header) to 'RankChanges' starting at A1.
+2025-04-19 10:39:19,606 - ERROR - Unexpected error processing worksheet 'RankChanges': Out of range float values are not JSON compliant: nan
+Traceback (most recent call last):
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 510, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant: nan
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\update_gsheet.py", line 110, in update_multiple_google_sheets
+    worksheet.update(range_name=START_CELL, values=data_to_write, value_input_option='USER_ENTERED')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\worksheet.py", line 1242, in update
+    response = self.client.values_update(
+        self.spreadsheet_id,
+    ...<2 lines>...
+        body={"values": values, "majorDimension": major_dimension},
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 173, in values_update
+    r = self.request("put", url, params=params, json=body)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 114, in request
+    response = self.session.request(
+        method=method,
+    ...<6 lines>...
+        timeout=self.timeout,
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\google\auth\transport\requests.py", line 537, in request
+    response = super(AuthorizedSession, self).request(
+        method,
+    ...<4 lines>...
+        **kwargs
+    )
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 370, in prepare
+    self.prepare_body(data, files, json)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jmfor\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 512, in prepare_body
+    raise InvalidJSONError(ve, request=self)
+requests.exceptions.InvalidJSONError: Out of range float values are not JSON compliant: nan
+2025-04-19 10:39:19,607 - INFO - --- Processing Worksheet: 'TimeOnList' ---
+2025-04-19 10:39:19,607 - INFO - Executing SQL query: SELECT * FROM vw_TimeOnList...
+2025-04-19 10:39:19,610 - INFO - Successfully read 302 rows from the database for 'TimeOnList'.
+2025-04-19 10:39:19,679 - INFO - Found existing worksheet: 'TimeOnList'.
+2025-04-19 10:39:19,679 - INFO - Clearing existing data from worksheet 'TimeOnList'.
+2025-04-19 10:39:19,783 - INFO - Writing 303 rows (incl. header) to 'TimeOnList' starting at A1.
+2025-04-19 10:39:19,901 - INFO - Successfully updated worksheet 'TimeOnList'.
+2025-04-19 10:39:19,901 - INFO - Database connection closed.
+2025-04-19 10:39:19,901 - INFO - Script finished.
+2025-04-19 13:07:22,361 - INFO - Script started.
+2025-04-19 13:07:22,361 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-19 13:07:22,363 - INFO - Opening Google Sheet ID: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-19 13:07:23,398 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-19 13:07:23,398 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-19 13:07:23,398 - INFO - Executing SQL query: SELECT * FROM vw_CurrentPodcastDetailsWithCategories...
+2025-04-19 13:07:23,418 - INFO - Successfully read 559 rows from the database for 'Top100List'.
+2025-04-19 13:07:23,499 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-19 13:07:23,500 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-19 13:07:23,609 - INFO - Writing 560 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-19 13:07:25,160 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-19 13:07:25,160 - INFO - --- Processing Worksheet: 'NewEntries' ---
+2025-04-19 13:07:25,160 - INFO - Executing SQL query: SELECT * FROM vw_NewEntries...
+2025-04-19 13:07:25,163 - INFO - Successfully read 20 rows from the database for 'NewEntries'.
+2025-04-19 13:07:25,244 - INFO - Found existing worksheet: 'NewEntries'.
+2025-04-19 13:07:25,244 - INFO - Clearing existing data from worksheet 'NewEntries'.
+2025-04-19 13:07:25,335 - INFO - Writing 21 rows (incl. header) to 'NewEntries' starting at A1.
+2025-04-19 13:07:25,435 - INFO - Successfully updated worksheet 'NewEntries'.
+2025-04-19 13:07:25,435 - INFO - --- Processing Worksheet: 'PlatformOverlap' ---
+2025-04-19 13:07:25,435 - INFO - Executing SQL query: SELECT * FROM vw_PlatformOverlap...
+2025-04-19 13:07:25,437 - INFO - Successfully read 43 rows from the database for 'PlatformOverlap'.
+2025-04-19 13:07:25,517 - INFO - Found existing worksheet: 'PlatformOverlap'.
+2025-04-19 13:07:25,517 - INFO - Clearing existing data from worksheet 'PlatformOverlap'.
+2025-04-19 13:07:25,604 - INFO - Writing 44 rows (incl. header) to 'PlatformOverlap' starting at A1.
+2025-04-19 13:07:25,707 - INFO - Successfully updated worksheet 'PlatformOverlap'.
+2025-04-19 13:07:25,707 - INFO - --- Processing Worksheet: 'RankChanges' ---
+2025-04-19 13:07:25,708 - INFO - Executing SQL query: SELECT * FROM vw_RankChanges...
+2025-04-19 13:07:25,715 - INFO - Successfully read 2000 rows from the database for 'RankChanges'.
+2025-04-19 13:07:25,781 - INFO - Found existing worksheet: 'RankChanges'.
+2025-04-19 13:07:25,781 - INFO - Clearing existing data from worksheet 'RankChanges'.
+2025-04-19 13:07:25,873 - INFO - Writing 2001 rows (incl. header) to 'RankChanges' starting at A1.
+2025-04-19 13:07:26,086 - INFO - Successfully updated worksheet 'RankChanges'.
+2025-04-19 13:07:26,086 - INFO - --- Processing Worksheet: 'TimeOnList' ---
+2025-04-19 13:07:26,086 - INFO - Executing SQL query: SELECT * FROM vw_TimeOnList...
+2025-04-19 13:07:26,089 - INFO - Successfully read 302 rows from the database for 'TimeOnList'.
+2025-04-19 13:07:26,170 - INFO - Found existing worksheet: 'TimeOnList'.
+2025-04-19 13:07:26,170 - INFO - Clearing existing data from worksheet 'TimeOnList'.
+2025-04-19 13:07:26,279 - INFO - Writing 303 rows (incl. header) to 'TimeOnList' starting at A1.
+2025-04-19 13:07:26,394 - INFO - Successfully updated worksheet 'TimeOnList'.
+2025-04-19 13:07:26,395 - INFO - Database connection closed.
+2025-04-19 13:07:26,395 - INFO - Script finished.
+2025-04-20 05:30:03,608 - INFO - Script started.
+2025-04-20 05:30:03,608 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-20 05:30:03,619 - INFO - Opening Google Sheet ID: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-20 05:30:04,750 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-20 05:30:04,751 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-20 05:30:04,751 - INFO - Executing SQL query: SELECT * FROM vw_CurrentPodcastDetailsWithCategories...
+2025-04-20 05:30:04,770 - INFO - Successfully read 562 rows from the database for 'Top100List'.
+2025-04-20 05:30:05,002 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-20 05:30:05,002 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-20 05:30:05,507 - INFO - Writing 563 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-20 05:30:06,406 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-20 05:30:06,406 - INFO - --- Processing Worksheet: 'NewEntries' ---
+2025-04-20 05:30:06,407 - INFO - Executing SQL query: SELECT * FROM vw_NewEntries...
+2025-04-20 05:30:06,410 - INFO - Successfully read 11 rows from the database for 'NewEntries'.
+2025-04-20 05:30:06,648 - INFO - Found existing worksheet: 'NewEntries'.
+2025-04-20 05:30:06,649 - INFO - Clearing existing data from worksheet 'NewEntries'.
+2025-04-20 05:30:06,950 - INFO - Writing 12 rows (incl. header) to 'NewEntries' starting at A1.
+2025-04-20 05:30:07,231 - INFO - Successfully updated worksheet 'NewEntries'.
+2025-04-20 05:30:07,231 - INFO - --- Processing Worksheet: 'PlatformOverlap' ---
+2025-04-20 05:30:07,231 - INFO - Executing SQL query: SELECT * FROM vw_PlatformOverlap...
+2025-04-20 05:30:07,233 - INFO - Successfully read 42 rows from the database for 'PlatformOverlap'.
+2025-04-20 05:30:07,509 - INFO - Found existing worksheet: 'PlatformOverlap'.
+2025-04-20 05:30:07,509 - INFO - Clearing existing data from worksheet 'PlatformOverlap'.
+2025-04-20 05:30:07,794 - INFO - Writing 43 rows (incl. header) to 'PlatformOverlap' starting at A1.
+2025-04-20 05:30:08,110 - INFO - Successfully updated worksheet 'PlatformOverlap'.
+2025-04-20 05:30:08,110 - INFO - --- Processing Worksheet: 'RankChanges' ---
+2025-04-20 05:30:08,110 - INFO - Executing SQL query: SELECT * FROM vw_RankChanges...
+2025-04-20 05:30:08,117 - INFO - Successfully read 2200 rows from the database for 'RankChanges'.
+2025-04-20 05:30:08,353 - INFO - Found existing worksheet: 'RankChanges'.
+2025-04-20 05:30:08,353 - INFO - Clearing existing data from worksheet 'RankChanges'.
+2025-04-20 05:30:08,645 - INFO - Writing 2201 rows (incl. header) to 'RankChanges' starting at A1.
+2025-04-20 05:30:09,260 - INFO - Successfully updated worksheet 'RankChanges'.
+2025-04-20 05:30:09,260 - INFO - --- Processing Worksheet: 'TimeOnList' ---
+2025-04-20 05:30:09,260 - INFO - Executing SQL query: SELECT * FROM vw_TimeOnList...
+2025-04-20 05:30:09,263 - INFO - Successfully read 308 rows from the database for 'TimeOnList'.
+2025-04-20 05:30:09,479 - INFO - Found existing worksheet: 'TimeOnList'.
+2025-04-20 05:30:09,479 - INFO - Clearing existing data from worksheet 'TimeOnList'.
+2025-04-20 05:30:10,008 - INFO - Writing 309 rows (incl. header) to 'TimeOnList' starting at A1.
+2025-04-20 05:30:10,339 - INFO - Successfully updated worksheet 'TimeOnList'.
+2025-04-20 05:30:10,340 - INFO - Database connection closed.
+2025-04-20 05:30:10,340 - INFO - Script finished.
+2025-04-21 05:30:03,688 - INFO - Script started.
+2025-04-21 05:30:03,688 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-21 05:30:03,697 - INFO - Opening Google Sheet ID: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-21 05:30:05,350 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-21 05:30:05,351 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-21 05:30:05,351 - INFO - Executing SQL query: SELECT * FROM vw_CurrentPodcastDetailsWithCategories...
+2025-04-21 05:30:05,370 - INFO - Successfully read 561 rows from the database for 'Top100List'.
+2025-04-21 05:30:05,468 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-21 05:30:05,468 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-21 05:30:05,590 - INFO - Writing 562 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-21 05:30:07,275 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-21 05:30:07,275 - INFO - --- Processing Worksheet: 'NewEntries' ---
+2025-04-21 05:30:07,276 - INFO - Executing SQL query: SELECT * FROM vw_NewEntries...
+2025-04-21 05:30:07,279 - INFO - Successfully read 15 rows from the database for 'NewEntries'.
+2025-04-21 05:30:07,373 - INFO - Found existing worksheet: 'NewEntries'.
+2025-04-21 05:30:07,373 - INFO - Clearing existing data from worksheet 'NewEntries'.
+2025-04-21 05:30:07,480 - INFO - Writing 16 rows (incl. header) to 'NewEntries' starting at A1.
+2025-04-21 05:30:07,579 - INFO - Successfully updated worksheet 'NewEntries'.
+2025-04-21 05:30:07,579 - INFO - --- Processing Worksheet: 'PlatformOverlap' ---
+2025-04-21 05:30:07,579 - INFO - Executing SQL query: SELECT * FROM vw_PlatformOverlap...
+2025-04-21 05:30:07,581 - INFO - Successfully read 40 rows from the database for 'PlatformOverlap'.
+2025-04-21 05:30:07,654 - INFO - Found existing worksheet: 'PlatformOverlap'.
+2025-04-21 05:30:07,654 - INFO - Clearing existing data from worksheet 'PlatformOverlap'.
+2025-04-21 05:30:07,749 - INFO - Writing 41 rows (incl. header) to 'PlatformOverlap' starting at A1.
+2025-04-21 05:30:07,865 - INFO - Successfully updated worksheet 'PlatformOverlap'.
+2025-04-21 05:30:07,866 - INFO - --- Processing Worksheet: 'RankChanges' ---
+2025-04-21 05:30:07,866 - INFO - Executing SQL query: SELECT * FROM vw_RankChanges...
+2025-04-21 05:30:07,873 - INFO - Successfully read 2400 rows from the database for 'RankChanges'.
+2025-04-21 05:30:07,974 - INFO - Found existing worksheet: 'RankChanges'.
+2025-04-21 05:30:07,974 - INFO - Clearing existing data from worksheet 'RankChanges'.
+2025-04-21 05:30:08,093 - INFO - Writing 2401 rows (incl. header) to 'RankChanges' starting at A1.
+2025-04-21 05:30:08,426 - INFO - Successfully updated worksheet 'RankChanges'.
+2025-04-21 05:30:08,426 - INFO - --- Processing Worksheet: 'TimeOnList' ---
+2025-04-21 05:30:08,427 - INFO - Executing SQL query: SELECT * FROM vw_TimeOnList...
+2025-04-21 05:30:08,430 - INFO - Successfully read 315 rows from the database for 'TimeOnList'.
+2025-04-21 05:30:08,519 - INFO - Found existing worksheet: 'TimeOnList'.
+2025-04-21 05:30:08,519 - INFO - Clearing existing data from worksheet 'TimeOnList'.
+2025-04-21 05:30:08,630 - INFO - Writing 316 rows (incl. header) to 'TimeOnList' starting at A1.
+2025-04-21 05:30:08,757 - INFO - Successfully updated worksheet 'TimeOnList'.
+2025-04-21 05:30:08,758 - INFO - Database connection closed.
+2025-04-21 05:30:08,758 - INFO - Script finished.
+2025-04-21 18:38:06,354 - INFO - Script started.
+2025-04-21 18:38:06,354 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-21 18:38:06,363 - INFO - Opening Google Sheet ID: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-21 18:38:07,820 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-21 18:38:07,822 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-21 18:38:07,822 - INFO - Executing SQL query: SELECT * FROM vw_CurrentPodcastDetailsWithCategories...
+2025-04-21 18:38:07,842 - INFO - Successfully read 560 rows from the database for 'Top100List'.
+2025-04-21 18:38:07,927 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-21 18:38:07,927 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-21 18:38:08,095 - INFO - Writing 561 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-21 18:38:09,661 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-21 18:38:09,661 - INFO - --- Processing Worksheet: 'NewEntries' ---
+2025-04-21 18:38:09,661 - INFO - Executing SQL query: SELECT * FROM vw_NewEntries...
+2025-04-21 18:38:09,665 - INFO - Successfully read 15 rows from the database for 'NewEntries'.
+2025-04-21 18:38:09,763 - INFO - Found existing worksheet: 'NewEntries'.
+2025-04-21 18:38:09,763 - INFO - Clearing existing data from worksheet 'NewEntries'.
+2025-04-21 18:38:09,873 - INFO - Writing 16 rows (incl. header) to 'NewEntries' starting at A1.
+2025-04-21 18:38:10,002 - INFO - Successfully updated worksheet 'NewEntries'.
+2025-04-21 18:38:10,002 - INFO - --- Processing Worksheet: 'PlatformOverlap' ---
+2025-04-21 18:38:10,002 - INFO - Executing SQL query: SELECT * FROM vw_PlatformOverlap...
+2025-04-21 18:38:10,004 - INFO - Successfully read 40 rows from the database for 'PlatformOverlap'.
+2025-04-21 18:38:10,082 - INFO - Found existing worksheet: 'PlatformOverlap'.
+2025-04-21 18:38:10,082 - INFO - Clearing existing data from worksheet 'PlatformOverlap'.
+2025-04-21 18:38:10,193 - INFO - Writing 41 rows (incl. header) to 'PlatformOverlap' starting at A1.
+2025-04-21 18:38:10,308 - INFO - Successfully updated worksheet 'PlatformOverlap'.
+2025-04-21 18:38:10,308 - INFO - --- Processing Worksheet: 'RankChanges' ---
+2025-04-21 18:38:10,308 - INFO - Executing SQL query: SELECT * FROM vw_RankChanges...
+2025-04-21 18:38:10,316 - INFO - Successfully read 2400 rows from the database for 'RankChanges'.
+2025-04-21 18:38:10,396 - INFO - Found existing worksheet: 'RankChanges'.
+2025-04-21 18:38:10,396 - INFO - Clearing existing data from worksheet 'RankChanges'.
+2025-04-21 18:38:10,522 - INFO - Writing 2401 rows (incl. header) to 'RankChanges' starting at A1.
+2025-04-21 18:38:10,815 - INFO - Successfully updated worksheet 'RankChanges'.
+2025-04-21 18:38:10,815 - INFO - --- Processing Worksheet: 'TimeOnList' ---
+2025-04-21 18:38:10,816 - INFO - Executing SQL query: SELECT * FROM vw_TimeOnList...
+2025-04-21 18:38:10,819 - INFO - Successfully read 315 rows from the database for 'TimeOnList'.
+2025-04-21 18:38:10,908 - INFO - Found existing worksheet: 'TimeOnList'.
+2025-04-21 18:38:10,908 - INFO - Clearing existing data from worksheet 'TimeOnList'.
+2025-04-21 18:38:11,046 - INFO - Writing 316 rows (incl. header) to 'TimeOnList' starting at A1.
+2025-04-21 18:38:11,211 - INFO - Successfully updated worksheet 'TimeOnList'.
+2025-04-21 18:38:11,212 - INFO - Database connection closed.
+2025-04-21 18:38:11,212 - INFO - Script finished.
+2025-04-22 05:30:03,427 - INFO - Script started.
+2025-04-22 05:30:03,427 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-22 05:30:03,435 - INFO - Opening Google Sheet ID: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-22 05:30:04,852 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-22 05:30:04,854 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-22 05:30:04,854 - INFO - Executing SQL query: SELECT * FROM vw_CurrentPodcastDetailsWithCategories...
+2025-04-22 05:30:04,876 - INFO - Successfully read 558 rows from the database for 'Top100List'.
+2025-04-22 05:30:04,986 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-22 05:30:04,986 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-22 05:30:05,241 - INFO - Writing 559 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-22 05:30:07,185 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-22 05:30:07,185 - INFO - --- Processing Worksheet: 'NewEntries' ---
+2025-04-22 05:30:07,185 - INFO - Executing SQL query: SELECT * FROM vw_NewEntries...
+2025-04-22 05:30:07,188 - INFO - Successfully read 19 rows from the database for 'NewEntries'.
+2025-04-22 05:30:07,305 - INFO - Found existing worksheet: 'NewEntries'.
+2025-04-22 05:30:07,305 - INFO - Clearing existing data from worksheet 'NewEntries'.
+2025-04-22 05:30:07,451 - INFO - Writing 20 rows (incl. header) to 'NewEntries' starting at A1.
+2025-04-22 05:30:07,594 - INFO - Successfully updated worksheet 'NewEntries'.
+2025-04-22 05:30:07,595 - INFO - --- Processing Worksheet: 'PlatformOverlap' ---
+2025-04-22 05:30:07,595 - INFO - Executing SQL query: SELECT * FROM vw_PlatformOverlap...
+2025-04-22 05:30:07,596 - INFO - Successfully read 40 rows from the database for 'PlatformOverlap'.
+2025-04-22 05:30:07,701 - INFO - Found existing worksheet: 'PlatformOverlap'.
+2025-04-22 05:30:07,701 - INFO - Clearing existing data from worksheet 'PlatformOverlap'.
+2025-04-22 05:30:07,844 - INFO - Writing 41 rows (incl. header) to 'PlatformOverlap' starting at A1.
+2025-04-22 05:30:07,993 - INFO - Successfully updated worksheet 'PlatformOverlap'.
+2025-04-22 05:30:07,993 - INFO - --- Processing Worksheet: 'RankChanges' ---
+2025-04-22 05:30:07,993 - INFO - Executing SQL query: SELECT * FROM vw_RankChanges...
+2025-04-22 05:30:08,003 - INFO - Successfully read 2600 rows from the database for 'RankChanges'.
+2025-04-22 05:30:08,108 - INFO - Found existing worksheet: 'RankChanges'.
+2025-04-22 05:30:08,108 - INFO - Clearing existing data from worksheet 'RankChanges'.
+2025-04-22 05:30:08,281 - INFO - Writing 2601 rows (incl. header) to 'RankChanges' starting at A1.
+2025-04-22 05:30:08,692 - INFO - Successfully updated worksheet 'RankChanges'.
+2025-04-22 05:30:08,692 - INFO - --- Processing Worksheet: 'TimeOnList' ---
+2025-04-22 05:30:08,692 - INFO - Executing SQL query: SELECT * FROM vw_TimeOnList...
+2025-04-22 05:30:08,696 - INFO - Successfully read 324 rows from the database for 'TimeOnList'.
+2025-04-22 05:30:08,809 - INFO - Found existing worksheet: 'TimeOnList'.
+2025-04-22 05:30:08,809 - INFO - Clearing existing data from worksheet 'TimeOnList'.
+2025-04-22 05:30:08,965 - INFO - Writing 325 rows (incl. header) to 'TimeOnList' starting at A1.
+2025-04-22 05:30:09,162 - INFO - Successfully updated worksheet 'TimeOnList'.
+2025-04-22 05:30:09,162 - INFO - Database connection closed.
+2025-04-22 05:30:09,162 - INFO - Script finished.
+2025-04-23 05:30:05,694 - INFO - Script started.
+2025-04-23 05:30:05,695 - INFO - Authenticating using key: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\podcast-dashboard-pipeline-3ee4a06f8550.json
+2025-04-23 05:30:05,753 - INFO - Opening Google Sheet ID: '1-bPweWPzKlY-h4YjCzN4x7S0comscrvz_hQbErqc8ek'
+2025-04-23 05:30:07,205 - INFO - Connecting to database: C:\Users\jmfor\Documents\local_podcast_dashboard_pipeline\data\podcasts.db
+2025-04-23 05:30:07,210 - INFO - --- Processing Worksheet: 'Top100List' ---
+2025-04-23 05:30:07,210 - INFO - Executing SQL query: SELECT * FROM vw_CurrentPodcastDetailsWithCategories...
+2025-04-23 05:30:07,275 - INFO - Successfully read 559 rows from the database for 'Top100List'.
+2025-04-23 05:30:07,367 - INFO - Found existing worksheet: 'Top100List'.
+2025-04-23 05:30:07,367 - INFO - Clearing existing data from worksheet 'Top100List'.
+2025-04-23 05:30:07,502 - INFO - Writing 560 rows (incl. header) to 'Top100List' starting at A1.
+2025-04-23 05:30:09,329 - INFO - Successfully updated worksheet 'Top100List'.
+2025-04-23 05:30:09,330 - INFO - --- Processing Worksheet: 'NewEntries' ---
+2025-04-23 05:30:09,330 - INFO - Executing SQL query: SELECT * FROM vw_NewEntries...
+2025-04-23 05:30:09,362 - INFO - Successfully read 28 rows from the database for 'NewEntries'.
+2025-04-23 05:30:09,507 - INFO - Found existing worksheet: 'NewEntries'.
+2025-04-23 05:30:09,507 - INFO - Clearing existing data from worksheet 'NewEntries'.
+2025-04-23 05:30:09,636 - INFO - Writing 29 rows (incl. header) to 'NewEntries' starting at A1.
+2025-04-23 05:30:09,759 - INFO - Successfully updated worksheet 'NewEntries'.
+2025-04-23 05:30:09,759 - INFO - --- Processing Worksheet: 'PlatformOverlap' ---
+2025-04-23 05:30:09,760 - INFO - Executing SQL query: SELECT * FROM vw_PlatformOverlap...
+2025-04-23 05:30:09,761 - INFO - Successfully read 41 rows from the database for 'PlatformOverlap'.
+2025-04-23 05:30:09,849 - INFO - Found existing worksheet: 'PlatformOverlap'.
+2025-04-23 05:30:09,849 - INFO - Clearing existing data from worksheet 'PlatformOverlap'.
+2025-04-23 05:30:09,965 - INFO - Writing 42 rows (incl. header) to 'PlatformOverlap' starting at A1.
+2025-04-23 05:30:10,079 - INFO - Successfully updated worksheet 'PlatformOverlap'.
+2025-04-23 05:30:10,079 - INFO - --- Processing Worksheet: 'RankChanges' ---
+2025-04-23 05:30:10,079 - INFO - Executing SQL query: SELECT * FROM vw_RankChanges...
+2025-04-23 05:30:10,092 - INFO - Successfully read 2800 rows from the database for 'RankChanges'.
+2025-04-23 05:30:10,177 - INFO - Found existing worksheet: 'RankChanges'.
+2025-04-23 05:30:10,177 - INFO - Clearing existing data from worksheet 'RankChanges'.
+2025-04-23 05:30:10,328 - INFO - Writing 2801 rows (incl. header) to 'RankChanges' starting at A1.
+2025-04-23 05:30:10,627 - INFO - Successfully updated worksheet 'RankChanges'.
+2025-04-23 05:30:10,627 - INFO - --- Processing Worksheet: 'TimeOnList' ---
+2025-04-23 05:30:10,628 - INFO - Executing SQL query: SELECT * FROM vw_TimeOnList...
+2025-04-23 05:30:10,633 - INFO - Successfully read 338 rows from the database for 'TimeOnList'.
+2025-04-23 05:30:10,724 - INFO - Found existing worksheet: 'TimeOnList'.
+2025-04-23 05:30:10,724 - INFO - Clearing existing data from worksheet 'TimeOnList'.
+2025-04-23 05:30:10,847 - INFO - Writing 339 rows (incl. header) to 'TimeOnList' starting at A1.
+2025-04-23 05:30:11,014 - INFO - Successfully updated worksheet 'TimeOnList'.
+2025-04-23 05:30:11,015 - INFO - Database connection closed.
+2025-04-23 05:30:11,015 - INFO - Script finished.
